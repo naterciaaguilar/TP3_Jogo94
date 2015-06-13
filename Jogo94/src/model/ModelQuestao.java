@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,8 +13,61 @@ import java.util.List;
  * @author User
  */
 public class ModelQuestao {
+    private String descricao;
     private int numQuestao;
     private ModelNivel nivel;
     private TipoQuestao tipoQuestao;
     private List<ModelResposta> respostas;
+    
+    public ModelQuestao() {
+        respostas = new ArrayList<ModelResposta>();
+    }
+    
+    public ModelQuestao(int numQuestao, String descricao, ModelNivel nivel, TipoQuestao tipoQuestao, List<ModelResposta> respostas) {
+        this.numQuestao = numQuestao;
+        this.descricao = descricao;
+        this.nivel = nivel;
+        this.tipoQuestao = tipoQuestao;
+        this.respostas = respostas;
+    }
+    
+    public String getDescricao() {
+        return descricao;
+    }
+    
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
+    public int getNumQuestao() {
+        return numQuestao;
+    }
+    
+    public void setNumQuestao(int numQuestao) {
+        this.numQuestao = numQuestao;
+    }
+    
+    public ModelNivel getNivel() {
+        return nivel;
+    }
+    
+    public void setNivel(ModelNivel nivel) {
+        this.nivel = nivel;
+    }
+    
+    public TipoQuestao getTipoQuestao() {
+        return tipoQuestao;
+    }
+    
+    public void setTipoQuestao(TipoQuestao tipoQuestao) {
+        this.tipoQuestao = tipoQuestao;
+    }
+    
+    public List<ModelResposta> getRespostas() {
+        return respostas;
+    }
+    
+    public void setRespostas(List<ModelResposta> respostas) {
+        this.respostas = respostas;
+    }
 }

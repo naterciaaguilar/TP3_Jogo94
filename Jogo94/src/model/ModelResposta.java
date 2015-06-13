@@ -12,4 +12,25 @@ package model;
 public class ModelResposta {
     private String palavra;
     private Double porcentagem;
+    
+    public ModelResposta(Double porcentagem, String palavra) {
+        this.porcentagem = porcentagem;
+        this.palavra = palavra;
+    }
+    
+    public String getPalavra() {
+        return palavra;
+    }
+    
+    public void setPalavra(String palavra) {
+        this.palavra = palavra;
+    }
+    
+    public Double getPorcentagem() {
+        return porcentagem;
+    }
+    
+    public void setPorcentagem() {
+        this.porcentagem = porcentagem;
+    }
 }
