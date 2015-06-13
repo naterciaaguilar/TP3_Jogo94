@@ -12,5 +12,13 @@ import javax.swing.JFrame;
  * @author User
  */
 public class FrameAplicacao extends JFrame {
-    
+    public FrameAplicacao () {
+        JFrame frame = new JFrame();
+        frame.setSize(300, 550);
+        frame.setTitle("94%");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
 }
