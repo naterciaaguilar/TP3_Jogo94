@@ -30,7 +30,7 @@ public class ModelResposta {
         return porcentagem;
     }
     
-    public void setPorcentagem() {
+    public void setPorcentagem(Double porcentagem) {
         this.porcentagem = porcentagem;
     }
 }
