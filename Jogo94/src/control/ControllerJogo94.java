@@ -19,10 +19,9 @@ public class ControllerJogo94 implements ActionListener {
     private VisaoJogo94 viewJogoAtual;
     
     public void inicializarJogo() {
-        // métodos para inicializar jogo - model
-        
+        jogoAtual = new ModelJogo94();
         viewJogoAtual = new VisaoJogo94();
-    }
+}
     
     public void selecionarNivel() {
         

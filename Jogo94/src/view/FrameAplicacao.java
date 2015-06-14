@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 public class FrameAplicacao extends JFrame {
     public FrameAplicacao () {
         super();
-        this.setSize(300, 550);
+        this.setSize(305, 580);
         this.setTitle("94%");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
