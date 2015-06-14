@@ -26,12 +26,8 @@ public class ModelJogo94 {
         criaNiveisJogo(); // Cria os 25 níveis do jogo
     }
 
-    public void comecaNovoJogo() { // Começa um novo jogo a partir do primeiro nível
-
-    }
-
     public void criaNiveisJogo() {
-        String path = "C:\\Users\\Lucas Henrique\\Documents\\NetBeansProjects\\TP3_Jogo94\\Jogo94\\src\\model\\Dados\\";
+        String path = "C:\\Users\\Lucas Henrique\\Documents\\NetBeansProjects\\TP3_Jogo94\\Jogo94\\src\\model\\Dados\\"; // ### MUDAR ####
         int i = 0;
         int aux = 0;
         try {
@@ -45,8 +41,6 @@ public class ModelJogo94 {
 
                     // ----- Cada nível contém 3 questões (linhas do arquivo)
                     if (i % 3 == 0 && aux == 0) { // Primeira questão do nível
-                        //System.out.println(getNumeroNiveis());
-                        //System.out.println(Linha[1]);
                         ModelNivel novoNivel = new ModelNivel(this); // Instância de um novo nível
 
                         List<ModelResposta> respostas = separaLinha(Linha); // Seleciona respostas do nível
