@@ -35,7 +35,7 @@ public class ModelNivel {
     }
     
     public ModelQuestao getQuestao(int numQuestao) {
-        return null;
+        return questoes.get(numQuestao);
     }
     
     public int getNumNivel() {

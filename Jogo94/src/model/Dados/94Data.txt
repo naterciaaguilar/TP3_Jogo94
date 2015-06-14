@@ -1,0 +1,75 @@
+1;Animais que nascem de um ovo;64;Passaro;11;Tartaruga;9;Jacare;7;Cobra;3;Peixe
+1;Frutas com semestes ou caroço;29;Maça;16;Melancia;15;Uva;14;Abacate;10;Manga;10;Pessego
+1;img_fogo_bombeiro.jpg;48;Fogo;26;Bombeiro;9;agua;7;Mangueira;4;Socorro
+2;Primeira coisa que eu faço de manha;42;Tomar cafe;29;Escovar os dentes;9;Banho;6;Banheiro;5;Telefone;3;Vestir
+2;Precisa de um bilhete;33;Cinema;16;Teatro;14;Trem;13;Show;13;onibus;5;Aviao
+2;img_lousa.jpg;27;Quadro;24;Giz;24;Escola;12;Cores;7;Desenho
+3;Coisas que iluminam;58;Lampada;20;Sol;7;Vela;6;Fogo;2;Lampiao;1;Farol
+3;Isso pesa mais de uma tonelada;37;Elefante;22;Carro;11;Baleia;8;Hipopotamo;7;Navio;5;Aviao;4;Predio
+3;img_elefante.jpg;37;Elefante;24;Familia;8;Filhotes;8;africa;8;Selva;7;agua;2;Lama
+4;Instrumento de percussao;35;Bateria;27;Tambor;16;Pandeiro;8;Bumbo;3;Bongo;3;Triangulo;2;Agogo
+4;StarWars;22;Guerra;15;Sabre de luz;15;Estrelas;14;Darth Vader;11;Espaço;7;Naves;5;r2-d2;3;Luke;1;Yoda
+4;img_dado.jpg;27;Dado;25;Jogo;22;Números;10;Sorte;7;Quadrado;3;Azar
+5;Especies de repteis;31;Lagarto;22;Jacare;21;Cobra;7;Tartaruga;5;Iguana;5;Sapo;3;Camaleao
+5;Eu uso todos os dias;44;Roupa;11;Escova;10;Escova de dentes;10;Celular;9;Sapato;5;Sabonete;2;Banheiro;2;Cama;1;Computador
+5;img_remedio.jpg;55;Remedio;21;Doenca;10;Dor;3;Cura;3;Farmacia;2;Cartela
+6;Algo que brilha;14;Sol;27;Luz;33;Estrela;6;Vagalume;5;Diamante;5;Glitter;4;Ouro
+6;Porco;29;Bacon;14;Carne;25;Lama;11;Rosa;10;Costela;3;Linguiça;2;Fazenda
+6;img_gato.jpg;10;Pelo;5;Bigode;41;Gato;38;Focinho
+7;Partes de um cavalo;30;Perna;21;Crina;20;Cabeça;20;Rabo;2;Barriga;1;Bunda
+7;GPS;33;Localizaçao;23;Caminho;17;Mapa;15;Carro;5;Satelite;1;Perdido
+7;img_kombi.jpg;41;Praia;23;Ferias;15;Verao;12;Kombi;3;Coqueiro
+8;e doce;25;Chocolate;19;Brigadeiro;14;Bala;12;Açúcar;12;Bolo;7;Sorvete;5;Chiclete
+8;Barack Obama;35;Presidente;30;Estados Unidos;21;Negro;4;Poder;2;Casa Branca;1;Democrata;1;Politica
+8;img_homem_trabalho.jpg;33;Trabalho;27;Estresse;21;Raiva;9;Desespero;4;Problema
+9;Partes de um carro;28;Volante;17;Motor;15;Roda;10;Pneu;7;Porta;6;Farol;6;Banco;5;Freio
+9;James Bond;31;007;26;Espiao;20;Filme;9;Arma;5;Açao;3;Carro
+9;img_aperto_maos.jpg;35;Acordo;31;Negocios;17;Trabalho;11;Cumprimento
+10;Legumes verdes;33;Alface;11;Pepino;10;Brocolis;10;Pimentao;8;Couve;7;Chuchu;6;Abobrinha;5;Repolho;4;Vagem
+10;Joias;32;Diamante;16;Anel;16;Colar;12;Brinco;9;Pulseira;9;Ouro
+10;img_mesa.jpg;39;Trabalho;20;Computador;19;oculos;7;Mouse;6;Mesa;3;Cadeira
+11;Alimentos gordurosos;43;Batata Frita;24;Hambúrguer;7;Bacon;6;Chocolate;5;Pizza;5;Coxinha;4;Pastel
+11;Algo que rola;48;Bola;31;Roda;8;Cilindro;3;Pedra;3;Rolo;1;Roleta
+11;img_casal_despertador.jpg;30;Despertador;26;Atraso;16;Acordar;12;Trabalho;6;Barulho;4;Manha
+12;Eu gostaria que meu amigo fosse mais...;37;Legal;11;Inteligente;11;Divertido;10;Presente;9;Bonito;6;Compreensivo;5;Sincero;5;Feliz
+12;Facebook;31;Amigos;18;Fotos;14;Curtir;12;Chat;8;Rede Social;6;Post;5;Compartilhar
+12;img_vinho.jpg;43;Vinho;24;Taça;15;Bebida;7;Vermelho;5;Uva
+13;Animais herbivoros;23;Vaca;19;Girafa;19;Cavalo;14;Coelho;8;Tartaruga;8;Elefante;3;Coala
+13;Coias que podemos diluir;32;Açúcar;19;Sal;10;agua;10;Suco;7;Chocolate;6;Tinta;5;Cafe;3;Remedio;2;alcool
+13;img_crianças.jpg;22;Selva;15;Safari;12;Crianças;12;Mato;10;Aventura;7;Binoculos;8;Observar;8;africa
+14;Chocolate;39;Gostoso;22;Doce;18;Cacau;8;Pascoa;5;Bolo;2;Barra
+14;Modos de Pagamento;41;Cartao;28;Dinheiro;22;Cheque;3;Boleto
+14;img_almoço.jpg;42;Amigos;20;Almoço;15;Comida;12;Felicidade;5;Suco
+15;Poker;32;Cartas;18;Jogo;17;Dinheiro;13;Fichas;9;Aposta;3;Mesa;1;Cassino;1;Blefe
+15;e proibido no aviao;37;Fumar;33;Celular;8;Arma;7;Sexo;6;Bomba;3;Faca
+15;img_praia.jpg;33;Viagem;29;Praia;13;Ferias;11;Malas;4;Destino;3;Verao;1;Azul
+16;e útil para os idosos;42;Bengala;15;oculos;12;Remedios;10;Dentadura;8;Ajuda;7;Cadeira de Rodas
+16;Um trabalho perigoso;39;Policial;20;Bombeiro;11;Eletricista;10;Piloto;6;Exercito;5;Pedreiro;3;Motoboy
+16;img_batatafrita.jpg;41;Batata;20;Fritura;14;Gordura;10;Gostoso;6;Sal;3;Amarelo
+17;Coisas relacionadas aos Estados Unidos;32;Fast Food;19;Disney;13;Compras;12;Obama;9;Dolar;9;Estatua da Liberdade
+17;Dentista;46;Dente;17;Dor;12;Aparelho;9;Carie;6;Cadeira;4;Medo
+17;img_ovos.jpg;37;Galinha;27;Ovo;11;Pintinho;8;Omelete;7;Gema;3;Clara;1;Tres
+18;Especie de felinos;27;Gato;22;Onça;21;Leao;17;Tigre;5;Guepardo;1;Jaguar;1;Puma
+18;Coisas que vemos no ceu;31;Nuvem;17;Estrelas;16;Sol;12;Aviao;11;Lua;7;Passaros
+18;img_trevo.jpg;36;Sorte;21;Trevo;16;Cavalo;14;Ferradura;3;Madeira;2;Verde;2;Superstiçao
+19;Ferramenta de jardinagem;38;Tesoura;13;Cortador de grama;13;Enxada;13;Regador;6;Balde;6;Pa;5;rastelo
+19;Isso faz bem quando estamos doentes;47;Remedio;17;Dormir;14;Carinho;10;Sopa;6;Cha
+19;img_casal.jpg;61;Ronco;12;Sono;7;Incomodo;6;Casal;5;Dormir;3;Cama
+20;Adjetivos que descrevem o tamanho;34;Grande;24;Pequeno;10;Medio;8;Alto;6;Enorme;6;Gigante;4;Baixo;2;Imenso
+20;Animais marinhos;43;Peixe;20;Baleia;12;Golfinho;11;Tartaruga;6;Foca;2;Lula
+20;img_pizza.jpg;56;Pizza;13;Queijo;11;Delicia;7;Azeitona;5;Calabresa;2;Fatia
+21;Encontramos em um castelo;59;Nobres;10;Coroa;8;Torre;5;Trono;5;Dragao;4;Armadura;3;Escadas
+21;Equipamento do Indiana Jones;40;Chicote;36;Chapeu;10;Arma;6;Faca;4;Bota;2;Lanterna;1;Bolsa
+21;img_carro_corrida.jpg;29;Carro;24;Corrida;14;Piloto;14;Velocidade;9;Formula 1;4;Pista
+22;Coisas relacionadas ao Egito;40;Piramide;17;Deserto;14;Farao;9;Múmia;7;Cleopatra;7;Esfinge
+22;Acessorios de um policial;42;Arma;22;Algema;14;Cacetete;8;Colete;4;Distintivo;4;Quepe
+22;img_matematica.jpg;34;Matematica;29;Calculo;20;Escola;8;Quadro;3;Giz
+23;Coisas que temos a tendencia a perder;34;Dinheiro;18;Chave;15;Celular;7;Peso;5;Tempo;4;Paciencia;4;Cabelo;4;Carteira;3;Brincos
+23;Gato;27;Pelo;22;Fofo;15;Animal;13;Bonito;11;Miado;6;Leite
+23;img_agua_viva.jpg;42;Mar;28;agua viva;11;Queimadura;9;Choque;3;Gosma;1;Tentaculos
+24;e bom para voce, mas voce nao gosta;36;Legumes;20;Remedio;15;Estudar;15;Exercicio;6;Frutas;2;Peixe
+24;Uma qualidade;24;Honesto;18;Bonito;17;Legal;15;Gentil;12;Inteligente;4;Paciente;4;Humilde
+24;img_spa.jpg;47;Relaxar;25;Massagem;11;Spa;7;oleo;2;Toalha;2;Beleza
+25;Comida tipica brasileira;44;Feijao;12;Churrasco;11;Tapioca;10;Arroz;9;Acaraje;5;Farofa;2;Vatapa;1;Pao de Queijo
+25;Eu comia quando era criança;34;Frutas;29;Doce;15;Papinha;11;Chocolate;3;Sopa;2;Bolo
+25;img_new_york.jpg;41;Estatua da Liberdade;21;Nova York;10;Predios;9;EUA;7;Cidade;6;Tocha
