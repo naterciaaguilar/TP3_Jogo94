@@ -13,12 +13,12 @@ import javax.swing.JFrame;
  */
 public class FrameAplicacao extends JFrame {
     public FrameAplicacao () {
-        JFrame frame = new JFrame();
-        frame.setSize(300, 550);
-        frame.setTitle("94%");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setVisible(true);
+        super();
+        this.setSize(300, 550);
+        this.setTitle("94%");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setVisible(true);
     }
 }

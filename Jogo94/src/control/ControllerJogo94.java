@@ -8,6 +8,7 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.ModelJogo94;
+import view.VisaoJogo94;
 
 /**
  *
@@ -15,9 +16,12 @@ import model.ModelJogo94;
  */
 public class ControllerJogo94 implements ActionListener {
     private ModelJogo94 jogoAtual;
+    private VisaoJogo94 viewJogoAtual;
     
     public void inicializarJogo() {
+        // métodos para inicializar jogo - model
         
+        viewJogoAtual = new VisaoJogo94();
     }
     
     public void selecionarNivel() {

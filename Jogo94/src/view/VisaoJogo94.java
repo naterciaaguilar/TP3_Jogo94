@@ -12,4 +12,25 @@ package view;
 public class VisaoJogo94 {
     private int numNivelAtual;
     private int numQuestaoAtual;
+    
+    private FrameAplicacao framePrincipal94;
+    private ViewSelecaoNivel telaSelecaoNivel;
+    private ViewSelecaoQuestao telaSelecaoQuestao;
+    private ViewQuestao telaRespostaQuestao;
+    
+    public VisaoJogo94() {
+        framePrincipal94 = new FrameAplicacao();
+        
+        telaSelecaoNivel = new ViewSelecaoNivel();
+        telaSelecaoQuestao = new ViewSelecaoQuestao();
+        telaRespostaQuestao = new ViewQuestao();
+        
+        framePrincipal94.add(telaSelecaoNivel);
+        framePrincipal94.add(telaSelecaoQuestao);
+        framePrincipal94.add(telaRespostaQuestao);
+        
+        telaSelecaoNivel.setVisible(true);
+        telaSelecaoQuestao.setVisible(false);
+        telaRespostaQuestao.setVisible(false);
+    }
 }

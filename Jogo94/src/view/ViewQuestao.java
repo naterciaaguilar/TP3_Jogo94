@@ -23,6 +23,18 @@ import javax.swing.JTextField;
  * @author User
  */
 public class ViewQuestao extends JInternalFrame {
+    private JLabel porcentagem; 
+    private JLabel questao;
+    
+    private JButton resp1;
+    private JButton resp2;
+    private JButton resp3;
+    private JButton resp4;
+    private JButton resp5;
+    private JButton resp6;
+    private JButton resp7;
+    private JButton resp8;
+    private JButton resp9;
     
     public ViewQuestao() {
         super();
@@ -38,14 +50,14 @@ public class ViewQuestao extends JInternalFrame {
 
         JButton voltar = new JButton("Voltar");
         
-        JLabel porcentagem = new JLabel("0%");
-        porcentagem.setFont(new Font("Arial", Font.BOLD, 15));
-        porcentagem.setForeground(Color.WHITE);
-        porcentagem.setVerticalAlignment(JLabel.CENTER);
-        porcentagem.setHorizontalAlignment(JLabel.CENTER);
+        this.porcentagem = new JLabel("0%");
+        this.porcentagem.setFont(new Font("Arial", Font.BOLD, 15));
+        this.porcentagem.setForeground(Color.WHITE);
+        this.porcentagem.setVerticalAlignment(JLabel.CENTER);
+        this.porcentagem.setHorizontalAlignment(JLabel.CENTER);
                
         panelCabecalho.add(voltar);
-        panelCabecalho.add(porcentagem);
+        panelCabecalho.add(this.porcentagem);
         
         contentPane.add(panelCabecalho, "North");
         
@@ -55,38 +67,38 @@ public class ViewQuestao extends JInternalFrame {
         JPanel panelQuestao = new JPanel(new BorderLayout());
         panelQuestao.setBackground(new Color(46, 217, 255));
                 
-        ImageIcon imgQuestao = new ImageIcon("");
-        JLabel questao = new JLabel("<html><center></center></html>", imgQuestao, JLabel.CENTER);
-        questao.setFont(new Font("Arial", Font.PLAIN, 20));
-        questao.setForeground(Color.WHITE);
-        questao.setVerticalAlignment(JLabel.CENTER);
+        this.questao = new JLabel("");
+        this.questao.setFont(new Font("Arial", Font.PLAIN, 20));
+        this.questao.setForeground(Color.WHITE);
+        this.questao.setVerticalAlignment(JLabel.CENTER);
+        this.questao.setHorizontalAlignment(JLabel.CENTER);
         
-        panelQuestao.add(questao);
+        panelQuestao.add(this.questao);
         
         panelGeral.add(panelQuestao);
         
         JPanel panelRespostas = new JPanel(new GridLayout(3, 3, 10, 10));
         panelRespostas.setBackground(new Color(46, 217, 255));
         
-        JButton resp1 = new JButton("0%");
-        JButton resp2 = new JButton("0%");
-        JButton resp3 = new JButton("0%");
-        JButton resp4 = new JButton("0%");
-        JButton resp5 = new JButton("0%");
-        JButton resp6 = new JButton("0%");
-        JButton resp7 = new JButton("0%");
-        JButton resp8 = new JButton("0%");
-        JButton resp9 = new JButton("0%");
+        this.resp1 = new JButton("0%");
+        this.resp2 = new JButton("0%");
+        this.resp3 = new JButton("0%");
+        this.resp4 = new JButton("0%");
+        this.resp5 = new JButton("0%");
+        this.resp6 = new JButton("0%");
+        this.resp7 = new JButton("0%");
+        this.resp8 = new JButton("0%");
+        this.resp9 = new JButton("0%");
         
-        panelRespostas.add(resp1);
-        panelRespostas.add(resp2);
-        panelRespostas.add(resp3);
-        panelRespostas.add(resp4);
-        panelRespostas.add(resp5);
-        panelRespostas.add(resp6);
-        panelRespostas.add(resp7);
-        panelRespostas.add(resp8);
-        panelRespostas.add(resp9);
+        panelRespostas.add(this.resp1);
+        panelRespostas.add(this.resp2);
+        panelRespostas.add(this.resp3);
+        panelRespostas.add(this.resp4);
+        panelRespostas.add(this.resp5);
+        panelRespostas.add(this.resp6);
+        panelRespostas.add(this.resp7);
+        panelRespostas.add(this.resp8);
+        panelRespostas.add(this.resp9);
         
         panelGeral.add(panelRespostas);
         

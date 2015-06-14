@@ -8,7 +8,6 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -21,6 +20,11 @@ import javax.swing.JPanel;
  * @author User
  */
 public class ViewSelecaoQuestao extends JInternalFrame {
+    private JLabel numNivel;
+    
+    private ButtonAplicacao questao1;
+    private ButtonAplicacao questao2;
+    private ButtonAplicacao questao3;
     
     public ViewSelecaoQuestao() {
         super();
@@ -31,7 +35,7 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         Container contentPane = this.getContentPane();
         contentPane.setLayout(new BorderLayout());
 
-        JPanel panelCabecalho = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        JPanel panelCabecalho = new JPanel(new BorderLayout(10, 10));
         panelCabecalho.setBackground(new Color(46, 217, 255));
 
         JButton voltar = new JButton("Voltar");
@@ -45,21 +49,21 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         JPanel panelNomeNivel = new JPanel(new GridLayout(4, 1, 10, 10));
         panelNomeNivel.setBackground(new Color(46, 217, 255));
         
-        JLabel nivel = new JLabel("");
+        JLabel nivel = new JLabel("Nível");
         nivel.setFont(new Font("Arial", Font.PLAIN, 20));
         nivel.setForeground(Color.WHITE);
         nivel.setVerticalAlignment(JLabel.BOTTOM);
         nivel.setHorizontalAlignment(JLabel.CENTER);
         
-        JLabel numNivel = new JLabel("");
-        numNivel.setFont(new Font("Arial", Font.BOLD, 50));
-        numNivel.setForeground(Color.WHITE);
-        numNivel.setVerticalAlignment(JLabel.NORTH);
-        numNivel.setHorizontalAlignment(JLabel.CENTER);
+        this.numNivel = new JLabel("");
+        this.numNivel.setFont(new Font("Arial", Font.BOLD, 50));
+        this.numNivel.setForeground(Color.WHITE);
+        this.numNivel.setVerticalAlignment(JLabel.NORTH);
+        this.numNivel.setHorizontalAlignment(JLabel.CENTER);
 
         panelNomeNivel.add(new JLabel(""));
         panelNomeNivel.add(nivel);
-        panelNomeNivel.add(numNivel);
+        panelNomeNivel.add(this.numNivel);
         panelNomeNivel.add(new JLabel(""));
         
         panelGeral.add(panelNomeNivel);
@@ -67,22 +71,17 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         JPanel panelQuestoes = new JPanel(new GridLayout(3, 1, 10, 10));
         panelQuestoes.setBackground(new Color(46, 217, 255));
         
-        ButtonAplicacao questao1 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
-        ButtonAplicacao questao2 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
-        ButtonAplicacao questao3 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
+        this.questao1 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
+        this.questao2 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
+        this.questao3 = new ButtonAplicacao("<html><center>Imagem</center></html>", ButtonAplicacao.B_ICON, true);
         
-        panelQuestoes.add(questao1);
-        panelQuestoes.add(questao2);
-        panelQuestoes.add(questao3);
+        panelQuestoes.add(this.questao1);
+        panelQuestoes.add(this.questao2);
+        panelQuestoes.add(this.questao3);
         
         panelGeral.add(panelQuestoes);
         
         contentPane.add(panelGeral, "Center");
-        
-        JPanel panelRodape = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
-        panelRodape.setBackground(new Color(46, 217, 255));
-        
-        contentPane.add(panelRodape, "South");
     }
     
     public void configurarNivel() {
