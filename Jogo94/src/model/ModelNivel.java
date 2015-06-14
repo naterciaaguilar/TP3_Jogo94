@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ModelNivel {
     private int numNivel;
-    private boolean finalizarNivel;
+    private boolean nivelFinalizado;
     private List<ModelQuestao> questoes;
     
     public ModelNivel(ModelJogo94 jogo) {
@@ -46,12 +46,12 @@ public class ModelNivel {
         this.numNivel = numNivel;
     }
     
-    public boolean getFinalizarNivel() {
-        return finalizarNivel;
+    public boolean getNivelFinalizado() {
+        return nivelFinalizado;
     }
     
-    public void setFinalizarNivel(boolean finalizarNivel) {
-        this.finalizarNivel = finalizarNivel;
+    public void setNivelFinalizado(boolean nivelFinalizado) {
+        this.nivelFinalizado = nivelFinalizado;
     }
     
     public int getNumeroQuestoes() {

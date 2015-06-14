@@ -15,6 +15,7 @@ import java.util.List;
 public class ModelQuestao {
     private String descricao;
     private int numQuestao;
+    private boolean questaoFinalizada;
     private ModelNivel nivel;
     private TipoQuestao tipoQuestao;
     private List<ModelResposta> respostas;
@@ -45,6 +46,14 @@ public class ModelQuestao {
     
     public void setNumQuestao(int numQuestao) {
         this.numQuestao = numQuestao;
+    }
+    
+    private boolean getQuestaoFinalizada() {
+        return questaoFinalizada;
+    }
+    
+    private void setQuestaoFinalizada(boolean questaoFinalizada) {
+        this.questaoFinalizada = questaoFinalizada;
     }
     
     public ModelNivel getNivel() {
