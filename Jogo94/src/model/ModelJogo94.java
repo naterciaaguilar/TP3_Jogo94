@@ -27,11 +27,11 @@ public class ModelJogo94 {
     }
 
     public void criaNiveisJogo() {
-        String path = "C:\\Users\\Lucas Henrique\\Documents\\NetBeansProjects\\TP3_Jogo94\\Jogo94\\src\\model\\Dados\\"; // ### MUDAR ####
+        String path = "Dados/";
         int i = 0;
         int aux = 0;
         try {
-            File arquivo = new File(path + "94Data.txt"); // Abre o arquivo comoJogar.txt
+            File arquivo = new File(path + "94Data.txt"); // Abre o arquivo de dados dos níveis
             FileReader fileReader = new FileReader(arquivo);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 

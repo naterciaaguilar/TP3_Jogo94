@@ -52,7 +52,7 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         nivel.setHorizontalAlignment(JLabel.CENTER);
         
         JLabel numNivel = new JLabel("");
-        numNivel.setFont(new Font("Serif", Font.BOLD, 50));
+        numNivel.setFont(new Font("Arial", Font.BOLD, 50));
         numNivel.setForeground(Color.WHITE);
         numNivel.setVerticalAlignment(JLabel.NORTH);
         numNivel.setHorizontalAlignment(JLabel.CENTER);

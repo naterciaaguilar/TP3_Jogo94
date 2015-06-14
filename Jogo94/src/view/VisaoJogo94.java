@@ -5,13 +5,11 @@
  */
 package view;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author User
  */
-public class VisaoJogo94 extends JPanel {
+public class VisaoJogo94 {
     private int numNivelAtual;
     private int numQuestaoAtual;
 }
