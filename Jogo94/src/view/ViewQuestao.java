@@ -165,6 +165,7 @@ public class ViewQuestao extends JInternalFrame {
         this.resp9.addActionListener(controlJogo);
         
         this.buttonOK.addActionListener(controlJogo);
+        this.respJogador.addActionListener(controlJogo);
         
         // numeros de nivel e questao
         this.numNivelAtual = 0;
@@ -421,6 +422,10 @@ public class ViewQuestao extends JInternalFrame {
     
     public JButton getButtonOK() {
         return this.buttonOK;
+    }
+    
+    public JTextField getRespJogador() {
+        return this.respJogador;
     }
     
     public JButton getResp1() {

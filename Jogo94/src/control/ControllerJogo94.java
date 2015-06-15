@@ -227,6 +227,10 @@ public class ControllerJogo94 implements ActionListener {
             this.responderQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                   this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(),
                                   this.viewJogoAtual.getTelaRespostaQuestao().getRespostaJogador());
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getRespJogador()) {
+            this.responderQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                  this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(),
+                                  this.viewJogoAtual.getTelaRespostaQuestao().getRespostaJogador());
         }
     }
 }
