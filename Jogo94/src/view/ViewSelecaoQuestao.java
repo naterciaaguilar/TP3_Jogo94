@@ -15,14 +15,15 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.ModelNivel;
-import model.ModelQuestao;
 
 /**
- *
+ * Janela interna para selecao da questao que sera respondida para cada nivel
+ * 
  * @author User
  */
 public class ViewSelecaoQuestao extends JInternalFrame {
     private JLabel numNivel;
+    private JButton voltar;
     
     private ButtonAplicacao questao1;
     private ButtonAplicacao questao2;
@@ -34,22 +35,28 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         this.setFrameIcon(null);
         this.setBorder(null);
         
+        Color corBackground = new Color(46, 217, 255);
+        
+        // container da tela
         Container contentPane = this.getContentPane();
         contentPane.setLayout(new BorderLayout());
 
+        // cabecalho da tela com botao de volta
         JPanel panelCabecalho = new JPanel(new BorderLayout(10, 10));
-        panelCabecalho.setBackground(new Color(46, 217, 255));
+        panelCabecalho.setBackground(corBackground);
 
-        JButton voltar = new JButton("Voltar");
-        panelCabecalho.add(voltar);
+        this.voltar = new JButton("Voltar");
+        panelCabecalho.add(this.voltar);
         
         contentPane.add(panelCabecalho, "North");
         
+        // area central da tela com numero do nivel e botoes para cada questao
         JPanel panelGeral = new JPanel(new GridLayout(1, 2));
-        panelGeral.setBackground(new Color(46, 217, 255));
+        panelGeral.setBackground(corBackground);
                 
+        // area para nome do nivel
         JPanel panelNomeNivel = new JPanel(new GridLayout(4, 1, 10, 10));
-        panelNomeNivel.setBackground(new Color(46, 217, 255));
+        panelNomeNivel.setBackground(corBackground);
         
         JLabel nivel = new JLabel("Nível");
         nivel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -70,8 +77,9 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         
         panelGeral.add(panelNomeNivel);
         
+        // area para os botoes das questoes
         JPanel panelQuestoes = new JPanel(new GridLayout(3, 1, 10, 10));
-        panelQuestoes.setBackground(new Color(46, 217, 255));
+        panelQuestoes.setBackground(corBackground);
         
         this.questao1 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
         this.questao2 = new ButtonAplicacao("", ButtonAplicacao.B_ICON, true);
@@ -84,8 +92,16 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         panelGeral.add(panelQuestoes);
         
         contentPane.add(panelGeral, "Center");
+        
+        // eventos da tela
     }
     
+    /**
+     * Para cada nivel aberto, a tela e configurada com suas questoes e verificado se possuem ou nao 
+     * estrelas (questoes completas)
+     * 
+     * @param nivel
+     */
     public void configurarNivel(ModelNivel nivel) {
         this.numNivel.setText(String.valueOf(nivel.getNumNivel()));
         
@@ -102,6 +118,10 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         if (nivel.getQuestao(2).getQuestaoFinalizada()) {
             this.questao3.setIcon(ButtonAplicacao.A_ICON);
         }
+    }
+    
+    public JButton getVoltar() {
+        return this.voltar;
     }
     
     public int getNumNivel() {

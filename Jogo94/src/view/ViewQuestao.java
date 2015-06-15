@@ -11,7 +11,6 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -19,13 +18,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- *
+ * Janela interna para resposta de cada questao para as fases
+ * 
  * @author User
  */
 public class ViewQuestao extends JInternalFrame {
     private JLabel porcentagem; 
     private JLabel questao;
     
+    private JButton voltar;
     private JButton resp1;
     private JButton resp2;
     private JButton resp3;
@@ -42,13 +43,17 @@ public class ViewQuestao extends JInternalFrame {
         this.setFrameIcon(null);
         this.setBorder(null);
         
+        Color corBackground = new Color(46, 217, 255);
+        
+        // container da tela
         Container contentPane = this.getContentPane();
         contentPane.setLayout(new BorderLayout());
 
+        // cabecalho da tela com botao de volta e porcentagem da questao
         JPanel panelCabecalho = new JPanel(new GridLayout(2, 1, 5, 5));
-        panelCabecalho.setBackground(new Color(46, 217, 255));
+        panelCabecalho.setBackground(corBackground);
 
-        JButton voltar = new JButton("Voltar");
+        this.voltar = new JButton("Voltar");
         
         this.porcentagem = new JLabel("0%");
         this.porcentagem.setFont(new Font("Arial", Font.BOLD, 15));
@@ -56,16 +61,18 @@ public class ViewQuestao extends JInternalFrame {
         this.porcentagem.setVerticalAlignment(JLabel.CENTER);
         this.porcentagem.setHorizontalAlignment(JLabel.CENTER);
                
-        panelCabecalho.add(voltar);
+        panelCabecalho.add(this.voltar);
         panelCabecalho.add(this.porcentagem);
         
         contentPane.add(panelCabecalho, "North");
         
+        // area central da tela
         JPanel panelGeral = new JPanel(new GridLayout(2, 1));
-        panelGeral.setBackground(new Color(46, 217, 255));
-                
+        panelGeral.setBackground(corBackground);
+        
+        // panel para exibicao da questao ou imagem
         JPanel panelQuestao = new JPanel(new BorderLayout());
-        panelQuestao.setBackground(new Color(46, 217, 255));
+        panelQuestao.setBackground(corBackground);
                 
         this.questao = new JLabel("");
         this.questao.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -77,8 +84,9 @@ public class ViewQuestao extends JInternalFrame {
         
         panelGeral.add(panelQuestao);
         
+        // area com todas as respostas e botoes de dicas
         JPanel panelRespostas = new JPanel(new GridLayout(3, 3, 10, 10));
-        panelRespostas.setBackground(new Color(46, 217, 255));
+        panelRespostas.setBackground(corBackground);
         
         this.resp1 = new JButton("0%");
         this.resp2 = new JButton("0%");
@@ -104,8 +112,9 @@ public class ViewQuestao extends JInternalFrame {
         
         contentPane.add(panelGeral, "Center");
         
+        // rodape com mensagem de dicas e area de digitacao da resposta
         JPanel panelRodape = new JPanel(new GridLayout(2, 1));
-        panelRodape.setBackground(new Color(46, 217, 255));
+        panelRodape.setBackground(corBackground);
         
         JLabel dica = new JLabel("Para obter uma dica, clique sobre alguma resposta");
         dica.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -116,7 +125,7 @@ public class ViewQuestao extends JInternalFrame {
         panelRodape.add(dica);
         
         JPanel panelResposta = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        panelResposta.setBackground(new Color(46, 217, 255));
+        panelResposta.setBackground(corBackground);
         
         JLabel lblResposta = new JLabel("Resposta: ");
         JTextField resposta = new JTextField(12);
@@ -129,6 +138,12 @@ public class ViewQuestao extends JInternalFrame {
         panelRodape.add(panelResposta);
         
         contentPane.add(panelRodape, "South");
+        
+        // eventos da tela
+    }
+    
+    public JButton getVoltar() {
+        return this.voltar;
     }
     
     public int getNumNivel() {

@@ -9,7 +9,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- *
+ * Classe para botoes da aplicacao com imagem e texto
+ * 
  * @author User
  */
 public class ButtonAplicacao extends JButton {

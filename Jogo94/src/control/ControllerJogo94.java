@@ -21,10 +21,17 @@ public class ControllerJogo94 implements ActionListener {
     private VisaoJogo94 viewJogoAtual;
     
     public void inicializarJogo() {
+        // cria fases e janelas do jogo
         jogoAtual = new ModelJogo94();
         viewJogoAtual = new VisaoJogo94(this);
     }
     
+    /**
+     * Seleciona um nivel quando o usuario clicar no botao e abre tela de selecao de questao
+     * para este nivel
+     * 
+     * @param numNivel
+     */
     public void selecionarNivel(int numNivel) {
         this.viewJogoAtual.getTelaSelecaoNivel().setVisible(false);
         this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(true);
@@ -44,6 +51,7 @@ public class ControllerJogo94 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         
+        // tratamento dos eventos da tela de Selecao de Nivel
         if (obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel1() ||
             obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel2() ||
             obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel3() ||
@@ -71,5 +79,9 @@ public class ControllerJogo94 implements ActionListener {
             obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel25()) {
             this.selecionarNivel(Integer.parseInt(((JButton)obj).getText()));
         }
+        
+        // tratamento dos eventos da tela de Selecao de Questao
+        
+        // tratamento dos eventos da tela de Selecao de Resposta
     }
 }

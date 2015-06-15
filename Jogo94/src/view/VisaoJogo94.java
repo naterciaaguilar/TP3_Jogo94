@@ -8,7 +8,8 @@ package view;
 import control.ControllerJogo94;
 
 /**
- *
+ * Classe responsavel pela criacao da janela principal com todas as janelas internas
+ * 
  * @author User
  */
 public class VisaoJogo94 {
@@ -23,14 +24,17 @@ public class VisaoJogo94 {
     public VisaoJogo94(ControllerJogo94 controlJogo) {
         framePrincipal94 = new FrameAplicacao();
         
+        // criacao das 3 telas de navegacao do jogo
         telaSelecaoNivel = new ViewSelecaoNivel(controlJogo);
         telaSelecaoQuestao = new ViewSelecaoQuestao();
         telaRespostaQuestao = new ViewQuestao();
         
+        // inclusao de todas as telas na janela principal
         framePrincipal94.add(telaSelecaoNivel);
         framePrincipal94.add(telaSelecaoQuestao);
         framePrincipal94.add(telaRespostaQuestao);
         
+        // ao iniciar o jogo, apenas a tela de selecao de nivel estara visivel
         telaSelecaoNivel.setVisible(true);
         telaSelecaoQuestao.setVisible(false);
         telaRespostaQuestao.setVisible(false);

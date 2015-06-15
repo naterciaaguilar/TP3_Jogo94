@@ -17,7 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Janela interna principal para selecao do nivel a ser jogado
+ * 
  * @author User
  */
 public class ViewSelecaoNivel extends JInternalFrame {
@@ -53,19 +54,25 @@ public class ViewSelecaoNivel extends JInternalFrame {
         this.setFrameIcon(null);
         this.setBorder(null);
         
+        Color corBackground = new Color(46, 217, 255);
+        
+        // container da tela
         Container contentPane = this.getContentPane();
         contentPane.setLayout(new BorderLayout());
         
+        // cabecalho da tela com logo do jogo
         JPanel panelCabecalho = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        panelCabecalho.setBackground(new Color(46, 217, 255));
+        panelCabecalho.setBackground(corBackground);
         ImageIcon logo = new ImageIcon("Imagens\\logo.png");
         panelCabecalho.add(new JLabel(logo));
         
         contentPane.add(panelCabecalho, "North");
         
+        // panel para os niveis disponiveis no jogo
         JPanel panelNiveis = new JPanel(new GridLayout(5, 5, 5, 5));
-        panelNiveis.setBackground(new Color(46, 217, 255));
+        panelNiveis.setBackground(corBackground);
         
+        // um botao da classe ButtonAplicacao para cada nivel
         this.nivel1 = new ButtonAplicacao("1", ButtonAplicacao.BBB_ICON, true);
         this.nivel2 = new ButtonAplicacao("2", ButtonAplicacao.BBB_ICON, false);
         this.nivel3 = new ButtonAplicacao("3", ButtonAplicacao.BBB_ICON, false);
@@ -92,32 +99,7 @@ public class ViewSelecaoNivel extends JInternalFrame {
         this.nivel24 = new ButtonAplicacao("24", ButtonAplicacao.BBB_ICON, false);
         this.nivel25 = new ButtonAplicacao("25", ButtonAplicacao.BBB_ICON, false);
         
-        this.nivel1.addActionListener(controlJogo);
-        this.nivel2.addActionListener(controlJogo);
-        this.nivel3.addActionListener(controlJogo);
-        this.nivel4.addActionListener(controlJogo);
-        this.nivel5.addActionListener(controlJogo);
-        this.nivel6.addActionListener(controlJogo);
-        this.nivel7.addActionListener(controlJogo);
-        this.nivel8.addActionListener(controlJogo);
-        this.nivel9.addActionListener(controlJogo);
-        this.nivel10.addActionListener(controlJogo);
-        this.nivel11.addActionListener(controlJogo);
-        this.nivel12.addActionListener(controlJogo);
-        this.nivel13.addActionListener(controlJogo);
-        this.nivel14.addActionListener(controlJogo);
-        this.nivel15.addActionListener(controlJogo);
-        this.nivel16.addActionListener(controlJogo);
-        this.nivel17.addActionListener(controlJogo);
-        this.nivel18.addActionListener(controlJogo);
-        this.nivel19.addActionListener(controlJogo);
-        this.nivel20.addActionListener(controlJogo);
-        this.nivel21.addActionListener(controlJogo);
-        this.nivel22.addActionListener(controlJogo);
-        this.nivel23.addActionListener(controlJogo);
-        this.nivel24.addActionListener(controlJogo);
-        this.nivel25.addActionListener(controlJogo);
-        
+        // inclusao dos botoes no panel
         panelNiveis.add(this.nivel1);
         panelNiveis.add(this.nivel2);
         panelNiveis.add(this.nivel3);
@@ -145,6 +127,33 @@ public class ViewSelecaoNivel extends JInternalFrame {
         panelNiveis.add(this.nivel25);
         
         contentPane.add(panelNiveis, "Center");
+        
+        // inclusão dos eventos da tela        
+        this.nivel1.addActionListener(controlJogo);
+        this.nivel2.addActionListener(controlJogo);
+        this.nivel3.addActionListener(controlJogo);
+        this.nivel4.addActionListener(controlJogo);
+        this.nivel5.addActionListener(controlJogo);
+        this.nivel6.addActionListener(controlJogo);
+        this.nivel7.addActionListener(controlJogo);
+        this.nivel8.addActionListener(controlJogo);
+        this.nivel9.addActionListener(controlJogo);
+        this.nivel10.addActionListener(controlJogo);
+        this.nivel11.addActionListener(controlJogo);
+        this.nivel12.addActionListener(controlJogo);
+        this.nivel13.addActionListener(controlJogo);
+        this.nivel14.addActionListener(controlJogo);
+        this.nivel15.addActionListener(controlJogo);
+        this.nivel16.addActionListener(controlJogo);
+        this.nivel17.addActionListener(controlJogo);
+        this.nivel18.addActionListener(controlJogo);
+        this.nivel19.addActionListener(controlJogo);
+        this.nivel20.addActionListener(controlJogo);
+        this.nivel21.addActionListener(controlJogo);
+        this.nivel22.addActionListener(controlJogo);
+        this.nivel23.addActionListener(controlJogo);
+        this.nivel24.addActionListener(controlJogo);
+        this.nivel25.addActionListener(controlJogo);
     }
     
     public int getNumNivelSelecionado() {

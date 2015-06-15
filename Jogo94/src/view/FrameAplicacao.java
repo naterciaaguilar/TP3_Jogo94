@@ -8,7 +8,8 @@ package view;
 import javax.swing.JFrame;
 
 /**
- *
+ * Classe para criacao do frame principal da aplicacao
+ * 
  * @author User
  */
 public class FrameAplicacao extends JFrame {
