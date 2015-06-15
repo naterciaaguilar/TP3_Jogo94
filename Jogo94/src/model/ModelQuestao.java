@@ -48,11 +48,11 @@ public class ModelQuestao {
         this.numQuestao = numQuestao;
     }
     
-    private boolean getQuestaoFinalizada() {
+    public boolean getQuestaoFinalizada() {
         return questaoFinalizada;
     }
     
-    private void setQuestaoFinalizada(boolean questaoFinalizada) {
+    public void setQuestaoFinalizada(boolean questaoFinalizada) {
         this.questaoFinalizada = questaoFinalizada;
     }
     

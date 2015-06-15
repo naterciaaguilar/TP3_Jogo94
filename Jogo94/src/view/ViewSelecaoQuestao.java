@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.ModelNivel;
+import model.ModelQuestao;
 
 /**
  *
@@ -84,8 +86,22 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         contentPane.add(panelGeral, "Center");
     }
     
-    public void configurarNivel() {
+    public void configurarNivel(ModelNivel nivel) {
+        this.numNivel.setText(String.valueOf(nivel.getNumNivel()));
         
+        this.questao1.setText("<html><center>" + nivel.getQuestao(0).getDescricao() + "</html></center>");
+        this.questao2.setText("<html><center>" + nivel.getQuestao(1).getDescricao() + "</html></center>");
+        
+        // avalia se questões já foram respondidas para adaptar estrelas
+        if (nivel.getQuestao(0).getQuestaoFinalizada()) {
+            this.questao1.setIcon(ButtonAplicacao.A_ICON);
+        }
+        if (nivel.getQuestao(1).getQuestaoFinalizada()) {
+            this.questao2.setIcon(ButtonAplicacao.A_ICON);
+        }
+        if (nivel.getQuestao(2).getQuestaoFinalizada()) {
+            this.questao3.setIcon(ButtonAplicacao.A_ICON);
+        }
     }
     
     public int getNumNivel() {

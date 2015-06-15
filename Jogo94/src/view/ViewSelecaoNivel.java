@@ -5,6 +5,7 @@
  */
 package view;
 
+import control.ControllerJogo94;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -46,7 +47,7 @@ public class ViewSelecaoNivel extends JInternalFrame {
     private ButtonAplicacao nivel24;
     private ButtonAplicacao nivel25;
     
-    public ViewSelecaoNivel() {
+    public ViewSelecaoNivel(ControllerJogo94 controlJogo) {
         super();
         this.setSize(300, 550);
         this.setFrameIcon(null);
@@ -91,6 +92,32 @@ public class ViewSelecaoNivel extends JInternalFrame {
         this.nivel24 = new ButtonAplicacao("24", ButtonAplicacao.BBB_ICON, false);
         this.nivel25 = new ButtonAplicacao("25", ButtonAplicacao.BBB_ICON, false);
         
+        this.nivel1.addActionListener(controlJogo);
+        this.nivel2.addActionListener(controlJogo);
+        this.nivel3.addActionListener(controlJogo);
+        this.nivel4.addActionListener(controlJogo);
+        this.nivel5.addActionListener(controlJogo);
+        this.nivel6.addActionListener(controlJogo);
+        this.nivel7.addActionListener(controlJogo);
+        this.nivel8.addActionListener(controlJogo);
+        this.nivel9.addActionListener(controlJogo);
+        this.nivel10.addActionListener(controlJogo);
+        this.nivel11.addActionListener(controlJogo);
+        this.nivel12.addActionListener(controlJogo);
+        this.nivel13.addActionListener(controlJogo);
+        this.nivel14.addActionListener(controlJogo);
+        this.nivel15.addActionListener(controlJogo);
+        this.nivel16.addActionListener(controlJogo);
+        this.nivel17.addActionListener(controlJogo);
+        this.nivel18.addActionListener(controlJogo);
+        this.nivel19.addActionListener(controlJogo);
+        this.nivel20.addActionListener(controlJogo);
+        this.nivel21.addActionListener(controlJogo);
+        this.nivel22.addActionListener(controlJogo);
+        this.nivel23.addActionListener(controlJogo);
+        this.nivel24.addActionListener(controlJogo);
+        this.nivel25.addActionListener(controlJogo);
+        
         panelNiveis.add(this.nivel1);
         panelNiveis.add(this.nivel2);
         panelNiveis.add(this.nivel3);
@@ -122,5 +149,105 @@ public class ViewSelecaoNivel extends JInternalFrame {
     
     public int getNumNivelSelecionado() {
         return 0;
+    }
+    
+    public ButtonAplicacao getNivel1() {
+        return this.nivel1;
+    }
+    
+    public ButtonAplicacao getNivel2() {
+        return this.nivel2;
+    }
+    
+    public ButtonAplicacao getNivel3() {
+        return this.nivel3;
+    }
+    
+    public ButtonAplicacao getNivel4() {
+        return this.nivel4;
+    }
+    
+    public ButtonAplicacao getNivel5() {
+        return this.nivel5;
+    }
+    
+    public ButtonAplicacao getNivel6() {
+        return this.nivel6;
+    }
+    
+    public ButtonAplicacao getNivel7() {
+        return this.nivel7;
+    }
+    
+    public ButtonAplicacao getNivel8() {
+        return this.nivel8;
+    }
+    
+    public ButtonAplicacao getNivel9() {
+        return this.nivel9;
+    }
+    
+    public ButtonAplicacao getNivel10() {
+        return this.nivel10;
+    }
+    
+    public ButtonAplicacao getNivel11() {
+        return this.nivel11;
+    }
+    
+    public ButtonAplicacao getNivel12() {
+        return this.nivel12;
+    }
+    
+    public ButtonAplicacao getNivel13() {
+        return this.nivel13;
+    }
+    
+    public ButtonAplicacao getNivel14() {
+        return this.nivel14;
+    }
+    
+    public ButtonAplicacao getNivel15() {
+        return this.nivel15;
+    }
+    
+    public ButtonAplicacao getNivel16() {
+        return this.nivel16;
+    }
+    
+    public ButtonAplicacao getNivel17() {
+        return this.nivel17;
+    }
+    
+    public ButtonAplicacao getNivel18() {
+        return this.nivel18;
+    }
+    
+    public ButtonAplicacao getNivel19() {
+        return this.nivel19;
+    }
+    
+    public ButtonAplicacao getNivel20() {
+        return this.nivel20;
+    }
+    
+    public ButtonAplicacao getNivel21() {
+        return this.nivel21;
+    }
+    
+    public ButtonAplicacao getNivel22() {
+        return this.nivel22;
+    }
+    
+    public ButtonAplicacao getNivel23() {
+        return this.nivel23;
+    }
+    
+    public ButtonAplicacao getNivel24() {
+        return this.nivel24;
+    }
+    
+    public ButtonAplicacao getNivel25() {
+        return this.nivel25;
     }
 }

@@ -5,6 +5,8 @@
  */
 package view;
 
+import control.ControllerJogo94;
+
 /**
  *
  * @author User
@@ -18,10 +20,10 @@ public class VisaoJogo94 {
     private ViewSelecaoQuestao telaSelecaoQuestao;
     private ViewQuestao telaRespostaQuestao;
     
-    public VisaoJogo94() {
+    public VisaoJogo94(ControllerJogo94 controlJogo) {
         framePrincipal94 = new FrameAplicacao();
         
-        telaSelecaoNivel = new ViewSelecaoNivel();
+        telaSelecaoNivel = new ViewSelecaoNivel(controlJogo);
         telaSelecaoQuestao = new ViewSelecaoQuestao();
         telaRespostaQuestao = new ViewQuestao();
         
@@ -32,5 +34,21 @@ public class VisaoJogo94 {
         telaSelecaoNivel.setVisible(true);
         telaSelecaoQuestao.setVisible(false);
         telaRespostaQuestao.setVisible(false);
+    }
+    
+    public FrameAplicacao getFramePrincipal94() {
+        return this.framePrincipal94;
+    }
+    
+    public ViewSelecaoNivel getTelaSelecaoNivel() {
+        return this.telaSelecaoNivel;
+    }
+    
+    public ViewSelecaoQuestao getTelaSelecaoQuestao() {
+        return this.telaSelecaoQuestao;
+    }
+    
+    public ViewQuestao getTelaRespostaQuestao() {
+        return this.telaRespostaQuestao;
     }
 }
