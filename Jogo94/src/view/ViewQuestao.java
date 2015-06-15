@@ -12,6 +12,7 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
@@ -34,16 +35,8 @@ public class ViewQuestao extends JInternalFrame {
     
     private JButton voltar;
     private JButton buttonOK;
-    private JButton resp1;
-    private JButton resp2;
-    private JButton resp3;
-    private JButton resp4;
-    private JButton resp5;
-    private JButton resp6;
-    private JButton resp7;
-    private JButton resp8;
-    private JButton resp9;
-    
+    private ArrayList<JButton> respostas;
+        
     private JTextField respJogador;
     
     private int numNivelAtual;
@@ -100,25 +93,12 @@ public class ViewQuestao extends JInternalFrame {
         JPanel panelRespostas = new JPanel(new GridLayout(3, 3, 10, 10));
         panelRespostas.setBackground(corBackground);
         
-        this.resp1 = new JButton("0%");
-        this.resp2 = new JButton("0%");
-        this.resp3 = new JButton("0%");
-        this.resp4 = new JButton("0%");
-        this.resp5 = new JButton("0%");
-        this.resp6 = new JButton("0%");
-        this.resp7 = new JButton("0%");
-        this.resp8 = new JButton("0%");
-        this.resp9 = new JButton("0%");
-        
-        panelRespostas.add(this.resp1);
-        panelRespostas.add(this.resp2);
-        panelRespostas.add(this.resp3);
-        panelRespostas.add(this.resp4);
-        panelRespostas.add(this.resp5);
-        panelRespostas.add(this.resp6);
-        panelRespostas.add(this.resp7);
-        panelRespostas.add(this.resp8);
-        panelRespostas.add(this.resp9);
+        // cria botoes para respostas e inclui no panel de respostas
+        this.respostas = new ArrayList<JButton>();
+        for (int i = 1; i <= 9; i++) {
+            this.respostas.add(new JButton("0%"));
+            panelRespostas.add(this.respostas.get(i - 1));
+        }
         
         panelGeral.add(panelRespostas);
         
@@ -154,15 +134,9 @@ public class ViewQuestao extends JInternalFrame {
         // eventos da tela
         this.voltar.addActionListener(controlJogo);
 
-        this.resp1.addActionListener(controlJogo);
-        this.resp2.addActionListener(controlJogo);
-        this.resp3.addActionListener(controlJogo);
-        this.resp4.addActionListener(controlJogo);
-        this.resp5.addActionListener(controlJogo);
-        this.resp6.addActionListener(controlJogo);
-        this.resp7.addActionListener(controlJogo);
-        this.resp8.addActionListener(controlJogo);
-        this.resp9.addActionListener(controlJogo);
+        for (int i = 0; i < 9; i++) {
+            this.respostas.get(i).addActionListener(controlJogo);
+        }
         
         this.buttonOK.addActionListener(controlJogo);
         this.respJogador.addActionListener(controlJogo);
@@ -228,52 +202,14 @@ public class ViewQuestao extends JInternalFrame {
         ModelResposta resposta;
         
         // deixa visivel apenas o numero de botoes para cada resposta
-        this.resp1.setVisible(numRespostas >= 1);
-        this.resp2.setVisible(numRespostas >= 2);
-        this.resp3.setVisible(numRespostas >= 3);
-        this.resp4.setVisible(numRespostas >= 4);
-        this.resp5.setVisible(numRespostas >= 5);
-        this.resp6.setVisible(numRespostas >= 6);
-        this.resp7.setVisible(numRespostas >= 7);
-        this.resp8.setVisible(numRespostas >= 8);
-        this.resp9.setVisible(numRespostas >= 9);
+        for (int i = 0; i < 9; i++) {
+            this.respostas.get(i).setVisible(numRespostas > i);
+        }
         
         // configura conteudo das respostas
-        if (numRespostas >= 1) {
-            resposta = questaoAtual.getRespostas().get(0);
-            this.ajustarResposta(resposta, 1);
-        }
-        if (numRespostas >= 2) {
-            resposta = questaoAtual.getRespostas().get(1);
-            this.ajustarResposta(resposta, 2);
-        }
-        if (numRespostas >= 3) {
-            resposta = questaoAtual.getRespostas().get(2);
-            this.ajustarResposta(resposta, 3);
-        }
-        if (numRespostas >= 4) {
-            resposta = questaoAtual.getRespostas().get(3);
-            this.ajustarResposta(resposta, 4);
-        }
-        if (numRespostas >= 5) {
-            resposta = questaoAtual.getRespostas().get(4);
-            this.ajustarResposta(resposta, 5);
-        }
-        if (numRespostas >= 6) {
-            resposta = questaoAtual.getRespostas().get(5);
-            this.ajustarResposta(resposta, 6);
-        }
-        if (numRespostas >= 7) {
-            resposta = questaoAtual.getRespostas().get(6);
-            this.ajustarResposta(resposta, 7);
-        }
-        if (numRespostas >= 8) {
-            resposta = questaoAtual.getRespostas().get(7);
-            this.ajustarResposta(resposta, 8);
-        }
-        if (numRespostas >= 9) {
-            resposta = questaoAtual.getRespostas().get(8);
-            this.ajustarResposta(resposta, 9);
+        for (int i = 0; i < numRespostas; i++) {
+            resposta = questaoAtual.getResposta(i);
+            this.ajustarResposta(resposta, i + 1);
         }
     }
     
@@ -284,80 +220,12 @@ public class ViewQuestao extends JInternalFrame {
      * @param indexPalavra
      */
     public void ajustarResposta(ModelResposta resposta, int indexPalavra) {
-        switch (indexPalavra) {
-            case 1:
-                if (resposta.getRespondida()) {
-                    this.resp1.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp1.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp1.setEnabled(!resposta.getRespondida());
-                break;
-            case 2:
-                if (resposta.getRespondida()) {
-                    this.resp2.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp2.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp2.setEnabled(!resposta.getRespondida());
-                break;
-            case 3:
-                if (resposta.getRespondida()) {
-                    this.resp3.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp3.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp3.setEnabled(!resposta.getRespondida());
-                break;
-            case 4:
-                if (resposta.getRespondida()) {
-                    this.resp4.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp4.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp4.setEnabled(!resposta.getRespondida());
-                break;
-            case 5:
-                if (resposta.getRespondida()) {
-                    this.resp5.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp5.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp5.setEnabled(!resposta.getRespondida());
-                break;
-            case 6:
-                if (resposta.getRespondida()) {
-                    this.resp6.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp6.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp6.setEnabled(!resposta.getRespondida());
-                break;
-            case 7:
-                if (resposta.getRespondida()) {
-                    this.resp7.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp7.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp7.setEnabled(!resposta.getRespondida());
-                break;
-            case 8:
-                if (resposta.getRespondida()) {
-                    this.resp8.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp8.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp8.setEnabled(!resposta.getRespondida());
-                break;
-            case 9:
-                if (resposta.getRespondida()) {
-                    this.resp9.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
-                } else {
-                    this.resp9.setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>");                
-                }
-                this.resp9.setEnabled(!resposta.getRespondida());
-                break;            
+        if (resposta.getRespondida()) {
+            this.respostas.get(indexPalavra - 1).setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%<br />" + resposta.getPalavra() + "</center></html>");
+        } else {
+            this.respostas.get(indexPalavra - 1).setText("<html><center>" + String.valueOf(resposta.getPorcentagem()) + "%</center></html>"); 
         }
+        this.respostas.get(indexPalavra - 1).setEnabled(!resposta.getRespondida());
     }
         
     /**
@@ -428,39 +296,11 @@ public class ViewQuestao extends JInternalFrame {
         return this.respJogador;
     }
     
-    public JButton getResp1() {
-        return this.resp1;
+    public ArrayList<JButton> getRespostas() {
+        return this.respostas;
     }
     
-    public JButton getResp2() {
-        return this.resp2;
-    }
-    
-    public JButton getResp3() {
-        return this.resp3;
-    }
-    
-    public JButton getResp4() {
-        return this.resp4;
-    }
-    
-    public JButton getResp5() {
-        return this.resp5;
-    }
-    
-    public JButton getResp6() {
-        return this.resp6;
-    }
-    
-    public JButton getResp7() {
-        return this.resp7;
-    }
-    
-    public JButton getResp8() {
-        return this.resp8;
-    }
-    
-    public JButton getResp9() {
-        return this.resp9;
+    public JButton getResp(int i) {
+        return this.respostas.get(i - 1);
     }
 }

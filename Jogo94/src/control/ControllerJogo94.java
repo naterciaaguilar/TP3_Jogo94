@@ -21,6 +21,9 @@ public class ControllerJogo94 implements ActionListener {
     private ModelJogo94 jogoAtual;
     private VisaoJogo94 viewJogoAtual;
     
+    /**
+     * Inicializa jogo criando as fases e montando as janelas de interface com o usuario
+     */
     public void inicializarJogo() {
         // cria fases e janelas do jogo
         this.jogoAtual = new ModelJogo94();
@@ -98,9 +101,14 @@ public class ControllerJogo94 implements ActionListener {
         }
     }
     
-    private static String removerAcentos(String str) 
+    /**
+     * Remove acentos das palavras digitadas pelo jogador
+     * 
+     * @param palavra
+     */
+    private static String removerAcentos(String palavra) 
     {
-        return Normalizer.normalize(str.toUpperCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+        return Normalizer.normalize(palavra.toUpperCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
 
     /**
@@ -153,31 +161,31 @@ public class ControllerJogo94 implements ActionListener {
         Object obj = e.getSource();
         
         // tratamento dos eventos da tela de Selecao de Nivel
-        if (obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel1() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel2() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel3() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel4() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel5() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel6() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel7() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel8() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel9() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel10() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel11() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel12() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel13() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel14() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel15() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel16() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel17() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel18() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel19() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel20() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel21() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel22() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel23() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel24() ||
-            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel25()) {
+        if (obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(1) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(2) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(3) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(4) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(5) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(6) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(7) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(8) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(9) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(10) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(11) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(12) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(13) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(14) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(15) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(16) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(17) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(18) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(19) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(20) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(21) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(22) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(23) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(24) ||
+            obj == this.viewJogoAtual.getTelaSelecaoNivel().getNivel(25)) {
             this.selecionarNivel(Integer.parseInt(((JButton)obj).getText()));
         }
         
@@ -196,31 +204,31 @@ public class ControllerJogo94 implements ActionListener {
         if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getVoltar()) {
             this.voltarTelaSelecaoQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                           this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao());
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp1()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(1)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 1);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp2()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(2)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 2);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp3()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(3)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 3);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp4()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(4)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 4);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp5()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(5)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 5);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp6()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(6)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 6);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp7()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(7)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 7);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp8()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(8)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 8);
-        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp9()) {
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp(9)) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 9);
         } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getButtonOK()) {
