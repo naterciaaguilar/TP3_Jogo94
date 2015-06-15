@@ -15,7 +15,7 @@ import java.util.List;
 public class ModelNivel {
     private int numNivel;
     private boolean nivelFinalizado;
-    private List<ModelQuestao> questoes;
+    private ArrayList<ModelQuestao> questoes;
     
     public ModelNivel(ModelJogo94 jogo) {
         this.questoes = new ArrayList<ModelQuestao>();
@@ -23,18 +23,36 @@ public class ModelNivel {
         this.nivelFinalizado = false;
     }
     
-    public void criaQuestaoNivel (ModelQuestao novaQuestao) {        
+    /**
+     * Associa uma nova questao a um nivel
+     * 
+     * @param novaQuestao
+     */
+    public void criarQuestaoNivel (ModelQuestao novaQuestao) {        
         questoes.add(novaQuestao);
     }
     
-    public List<ModelQuestao> getQuestoes() {
+    /**
+     * Verifica se o nivel pode ser considerado como finalizado
+     * Regra: se houver qualquer uma das 3 questoes do nivel com status de finalizada,
+     * o mesmo tambem pode ser considerado como tal, desbloqueando assim o proximo
+     */
+    public void finalizarNivel() {
+        boolean testeNivelFinalizado = false;
+        
+        for (ModelQuestao questao : this.questoes) {
+            if (questao.getQuestaoFinalizada()) {
+                testeNivelFinalizado = true;
+            }
+        }
+        
+        this.nivelFinalizado = testeNivelFinalizado;
+    }
+    
+    public ArrayList<ModelQuestao> getQuestoes() {
         return questoes;
     }
-    
-    public void setQuestoes(List<ModelQuestao> questoes) {
-        this.questoes = questoes;
-    }
-    
+        
     public ModelQuestao getQuestao(int numQuestao) {
         return questoes.get(numQuestao);
     }
@@ -43,16 +61,8 @@ public class ModelNivel {
         return numNivel;
     }
     
-    public void setNumNivel(int numNivel) {
-        this.numNivel = numNivel;
-    }
-    
     public boolean getNivelFinalizado() {
         return nivelFinalizado;
-    }
-    
-    public void setNivelFinalizado(boolean nivelFinalizado) {
-        this.nivelFinalizado = nivelFinalizado;
     }
     
     public int getNumeroQuestoes() {

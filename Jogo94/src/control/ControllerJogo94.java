@@ -8,8 +8,8 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import model.ModelJogo94;
+import model.ModelResposta;
 import view.VisaoJogo94;
 
 /**
@@ -57,8 +57,44 @@ public class ControllerJogo94 implements ActionListener {
         this.viewJogoAtual.getTelaRespostaQuestao().configurarQuestao(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1));
     }
     
-    public void responderQuestao() {
+    /**
+     * Verifica se a resposta fornecida faz parte do conjunto de respostas da questao
+     * 
+     * @param numNivel
+     * @param numQuestao
+     * @param resposta
+     */
+    public void responderQuestao(int numNivel, int numQuestao, String resposta) {
+        boolean respostaCorreta = false;
+        int indexPalavra = 0;
         
+        // busca palavra informada entre as respostas, ignorando letras maiusculas e minusculas
+        for (ModelResposta resp : this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).getRespostas()) {
+            indexPalavra++;
+            if (resposta.toUpperCase().equals(resp.getPalavra().toUpperCase())) {
+                respostaCorreta = true;
+                
+                // seta resposta como correta
+                resp.acertarResposta();
+                this.viewJogoAtual.getTelaRespostaQuestao().ajustarResposta(resp, indexPalavra);
+                this.viewJogoAtual.getTelaRespostaQuestao().ajustarPorcentagem(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1));
+                
+                // para resposta certa, verificar se todas as respostas da questao estao corretas
+                this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).finalizarQuestao();
+                
+                // para resposta certa, verificaar se nivel pode ser encerrado
+                this.jogoAtual.getNivel(numNivel - 1).finalizarNivel();
+            }
+        }
+        
+        // se a questao tiver sido respondida completamente, exibe mensagem e volta à tela de selecao de questao
+        // caso contrario, exibe apenas mensagem de palavra correta
+        if (this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).getQuestaoFinalizada()) {
+            this.viewJogoAtual.getTelaRespostaQuestao().mostrarMensagemFinalizacao();
+            this.voltarTelaSelecaoQuestao(numNivel, numQuestao);
+        } else {
+            this.viewJogoAtual.getTelaRespostaQuestao().mostrarMensagemResposta(respostaCorreta);
+        }
     }
     
     /**
@@ -101,6 +137,11 @@ public class ControllerJogo94 implements ActionListener {
         this.viewJogoAtual.getTelaRespostaQuestao().mostrarDica(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).getResposta(numResposta - 1));
     }
     
+    /**
+     * Trata os eventos que acontecem na interface com o usuario
+     * 
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
@@ -176,6 +217,10 @@ public class ControllerJogo94 implements ActionListener {
         } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp9()) {
             this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                       this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 9);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getButtonOK()) {
+            this.responderQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                  this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(),
+                                  this.viewJogoAtual.getTelaRespostaQuestao().getRespostaJogador());
         }
     }
 }

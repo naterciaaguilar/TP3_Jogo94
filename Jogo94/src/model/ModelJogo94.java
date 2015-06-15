@@ -19,14 +19,17 @@ import java.util.List;
  */
 public class ModelJogo94 {
 
-    private List<ModelNivel> niveis;
+    private ArrayList<ModelNivel> niveis;
 
     public ModelJogo94() {
         niveis = new ArrayList<ModelNivel>();
         criaNiveisJogo(); // Cria os 25 níveis do jogo
     }
 
-    public void criaNiveisJogo() {
+    /**
+     * Cria os 25 niveis do jogo de acordo com arquivo de dados
+     */
+    private void criaNiveisJogo() {
         String path = "Dados/";
         int i = 0;
         int aux = 0;
@@ -43,21 +46,21 @@ public class ModelJogo94 {
                     if (i % 3 == 0 && aux == 0) { // Primeira questão do nível
                         ModelNivel novoNivel = new ModelNivel(this); // Instância de um novo nível
 
-                        List<ModelResposta> respostas = separaLinha(Linha); // Seleciona respostas do nível
+                        ArrayList<ModelResposta> respostas = separaLinha(Linha); // Seleciona respostas do nível
                         ModelQuestao questao = new ModelQuestao(1, Linha[1], novoNivel, TipoQuestao.Pergunta, respostas); // Define questões do nível
-                        novoNivel.criaQuestaoNivel(questao); // Adiciona questão ao nível
+                        novoNivel.criarQuestaoNivel(questao); // Adiciona questão ao nível
 
                         niveis.add(novoNivel);
                     }
                     if (aux == 1) { // Segunda questão do nível
-                        List<ModelResposta> respostas = separaLinha(Linha);
+                        ArrayList<ModelResposta> respostas = separaLinha(Linha);
                         ModelQuestao questao = new ModelQuestao(2, Linha[1], niveis.get(niveis.size() - 1), TipoQuestao.Pergunta, respostas); // Define questões do nível
-                        niveis.get(niveis.size() - 1).criaQuestaoNivel(questao);
+                        niveis.get(niveis.size() - 1).criarQuestaoNivel(questao);
                     }
                     if (aux == 2) { // Terceira questão do nível
-                        List<ModelResposta> respostas = separaLinha(Linha);
+                        ArrayList<ModelResposta> respostas = separaLinha(Linha);
                         ModelQuestao questao = new ModelQuestao(3, Linha[1], niveis.get(niveis.size() - 1), TipoQuestao.Imagem, respostas); // Define questões do nível
-                        niveis.get(niveis.size() - 1).criaQuestaoNivel(questao);
+                        niveis.get(niveis.size() - 1).criarQuestaoNivel(questao);
                         aux = -1;
                     }
 
@@ -74,8 +77,14 @@ public class ModelJogo94 {
         }
     }
 
-    public List<ModelResposta> separaLinha(String Linha[]) {
-        List<ModelResposta> respostas = new ArrayList<ModelResposta>(); // ArrayList que armazena as respostas da questão
+    /**
+     * Separa campos de resposta de uma linha
+     * 
+     * @param Linha
+     * @return respostas
+     */
+    public ArrayList<ModelResposta> separaLinha(String Linha[]) {
+        ArrayList<ModelResposta> respostas = new ArrayList<ModelResposta>(); // ArrayList que armazena as respostas da questão
         int j = 2;
         while (j < Linha.length) {
             ModelResposta answer = new ModelResposta(Integer.parseInt(Linha[j]), Linha[j + 1]);
@@ -92,10 +101,6 @@ public class ModelJogo94 {
 
     public List<ModelNivel> getNiveis() {
         return niveis;
-    }
-
-    public void setModelNivel(List<ModelNivel> niveis) {
-        this.niveis = niveis;
     }
 
     public int getNumeroNiveis() {

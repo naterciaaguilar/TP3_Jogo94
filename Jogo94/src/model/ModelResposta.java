@@ -20,27 +20,22 @@ public class ModelResposta {
         this.respondida = false;
     }
     
-    public String getPalavra() {
-        return palavra;
+    /**
+     * Considerar a resposta acertada pelo jogador
+     */
+    public void acertarResposta() {
+        this.respondida = true;
     }
     
-    public void setPalavra(String palavra) {
-        this.palavra = palavra;
+    public String getPalavra() {
+        return palavra;
     }
     
     public int getPorcentagem() {
         return porcentagem;
     }
     
-    public void setPorcentagem(int porcentagem) {
-        this.porcentagem = porcentagem;
-    }
-    
     public boolean getRespondida() {
         return respondida;
-    }
-    
-    public void setRespondida(boolean respondida) {
-        this.respondida = respondida;
     }
 }

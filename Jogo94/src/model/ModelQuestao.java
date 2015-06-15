@@ -18,13 +18,13 @@ public class ModelQuestao {
     private boolean questaoFinalizada;
     private ModelNivel nivel;
     private TipoQuestao tipoQuestao;
-    private List<ModelResposta> respostas;
+    private ArrayList<ModelResposta> respostas;
     
     public ModelQuestao() {
         respostas = new ArrayList<ModelResposta>();
     }
     
-    public ModelQuestao(int numQuestao, String descricao, ModelNivel nivel, TipoQuestao tipoQuestao, List<ModelResposta> respostas) {
+    public ModelQuestao(int numQuestao, String descricao, ModelNivel nivel, TipoQuestao tipoQuestao, ArrayList<ModelResposta> respostas) {
         this.numQuestao = numQuestao;
         this.descricao = descricao;
         this.nivel = nivel;
@@ -33,52 +33,44 @@ public class ModelQuestao {
         this.questaoFinalizada = false;
     }
     
+    /**
+     * Verifica se a questao pode ser considerado como finalizada
+     * Regra: todas as respostas devem ter sido acertadas
+     */
+    public void finalizarQuestao() {
+        boolean testeQuestaoFinalizada = true;
+        
+        for (ModelResposta resposta : this.respostas) {
+            if (!resposta.getRespondida()) {
+                testeQuestaoFinalizada = false;
+            }
+        }
+        
+        this.questaoFinalizada = testeQuestaoFinalizada;
+    }
+    
     public String getDescricao() {
         return descricao;
     }
-    
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    
+        
     public int getNumQuestao() {
         return numQuestao;
-    }
-    
-    public void setNumQuestao(int numQuestao) {
-        this.numQuestao = numQuestao;
     }
     
     public boolean getQuestaoFinalizada() {
         return questaoFinalizada;
     }
     
-    public void setQuestaoFinalizada(boolean questaoFinalizada) {
-        this.questaoFinalizada = questaoFinalizada;
-    }
-    
     public ModelNivel getNivel() {
         return nivel;
-    }
-    
-    public void setNivel(ModelNivel nivel) {
-        this.nivel = nivel;
     }
     
     public TipoQuestao getTipoQuestao() {
         return tipoQuestao;
     }
     
-    public void setTipoQuestao(TipoQuestao tipoQuestao) {
-        this.tipoQuestao = tipoQuestao;
-    }
-    
     public List<ModelResposta> getRespostas() {
         return respostas;
-    }
-    
-    public void setRespostas(List<ModelResposta> respostas) {
-        this.respostas = respostas;
     }
     
     public ModelResposta getResposta(int numReposta) {

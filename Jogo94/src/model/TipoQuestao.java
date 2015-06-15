@@ -6,7 +6,9 @@
 package model;
 
 /**
- *
+ * Tipos de questao possiveis: pergunta ou imagem
+ * As duas primeiras questoes de cada nivel sao do tipo pergunta e a terceira, do tipo imagem
+ * 
  * @author User
  */
 public enum TipoQuestao {
