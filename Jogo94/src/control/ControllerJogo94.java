@@ -7,6 +7,7 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.Normalizer;
 import javax.swing.JButton;
 import model.ModelJogo94;
 import model.ModelResposta;
@@ -71,7 +72,7 @@ public class ControllerJogo94 implements ActionListener {
         // busca palavra informada entre as respostas, ignorando letras maiusculas e minusculas
         for (ModelResposta resp : this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).getRespostas()) {
             indexPalavra++;
-            if (resposta.toUpperCase().equals(resp.getPalavra().toUpperCase())) {
+            if (removerAcentos(resposta).equals(removerAcentos(resp.getPalavra()))) {
                 respostaCorreta = true;
                 
                 // seta resposta como correta
@@ -97,6 +98,11 @@ public class ControllerJogo94 implements ActionListener {
         }
     }
     
+    private static String removerAcentos(String str) 
+    {
+        return Normalizer.normalize(str.toUpperCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+    }
+
     /**
      * Volta para a tela de selecao de nivel, estando na tela de selecao de questao
      * 
