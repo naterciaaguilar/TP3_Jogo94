@@ -26,8 +26,8 @@ public class VisaoJogo94 {
         
         // criacao das 3 telas de navegacao do jogo
         telaSelecaoNivel = new ViewSelecaoNivel(controlJogo);
-        telaSelecaoQuestao = new ViewSelecaoQuestao();
-        telaRespostaQuestao = new ViewQuestao();
+        telaSelecaoQuestao = new ViewSelecaoQuestao(controlJogo);
+        telaRespostaQuestao = new ViewQuestao(controlJogo);
         
         // inclusao de todas as telas na janela principal
         framePrincipal94.add(telaSelecaoNivel);

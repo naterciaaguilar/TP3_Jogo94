@@ -5,6 +5,7 @@
  */
 package view;
 
+import control.ControllerJogo94;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -15,6 +16,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.ModelNivel;
+import model.ModelQuestao;
 
 /**
  * Janela interna para selecao da questao que sera respondida para cada nivel
@@ -29,7 +31,9 @@ public class ViewSelecaoQuestao extends JInternalFrame {
     private ButtonAplicacao questao2;
     private ButtonAplicacao questao3;
     
-    public ViewSelecaoQuestao() {
+    private int numNivelAtual;
+    
+    public ViewSelecaoQuestao(ControllerJogo94 controlJogo) {
         super();
         this.setSize(300, 550);
         this.setFrameIcon(null);
@@ -94,6 +98,14 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         contentPane.add(panelGeral, "Center");
         
         // eventos da tela
+        this.voltar.addActionListener(controlJogo);
+        
+        this.questao1.addActionListener(controlJogo);
+        this.questao2.addActionListener(controlJogo);
+        this.questao3.addActionListener(controlJogo);
+        
+        // seta valor de numNivel
+        this.numNivelAtual = 0;
     }
     
     /**
@@ -109,26 +121,64 @@ public class ViewSelecaoQuestao extends JInternalFrame {
         this.questao2.setText("<html><center>" + nivel.getQuestao(1).getDescricao() + "</html></center>");
         
         // avalia se questões já foram respondidas para adaptar estrelas
-        if (nivel.getQuestao(0).getQuestaoFinalizada()) {
-            this.questao1.setIcon(ButtonAplicacao.A_ICON);
+        for (ModelQuestao questao : nivel.getQuestoes()) {
+            this.ajustarQuestao(questao);
         }
-        if (nivel.getQuestao(1).getQuestaoFinalizada()) {
-            this.questao2.setIcon(ButtonAplicacao.A_ICON);
-        }
-        if (nivel.getQuestao(2).getQuestaoFinalizada()) {
-            this.questao3.setIcon(ButtonAplicacao.A_ICON);
-        }
+        
+        // seta nivel
+        this.numNivelAtual = nivel.getNumNivel();
+    }
+    
+    /**
+     * Ajusta estrela da questao de acordo com suas respostas
+     * 
+     * @param questaoAtual
+     */
+    public void ajustarQuestao(ModelQuestao questaoAtual) {
+        if (questaoAtual.getQuestaoFinalizada()) {
+            switch (questaoAtual.getNumQuestao()) {
+                case 1:
+                    this.questao1.setIcon(ButtonAplicacao.A_ICON);
+                    break;
+                case 2:
+                    this.questao2.setIcon(ButtonAplicacao.A_ICON);
+                    break;
+                case 3:
+                    this.questao3.setIcon(ButtonAplicacao.A_ICON);
+                    break;
+            }
+        } else {
+            switch (questaoAtual.getNumQuestao()) {
+                case 1:
+                    this.questao1.setIcon(ButtonAplicacao.B_ICON);
+                    break;
+                case 2:
+                    this.questao2.setIcon(ButtonAplicacao.B_ICON);
+                    break;
+                case 3:
+                    this.questao3.setIcon(ButtonAplicacao.B_ICON);
+                    break;
+            }
+        }       
+    }
+    
+    public int getNumNivel() {
+        return this.numNivelAtual;
     }
     
     public JButton getVoltar() {
         return this.voltar;
     }
     
-    public int getNumNivel() {
-        return 0;
+    public ButtonAplicacao getQuestao1() {
+        return this.questao1;
     }
     
-    public int getNumQuestaoSelecionada() {
-        return 0;
+    public ButtonAplicacao getQuestao2() {
+        return this.questao2;
+    }
+    
+    public ButtonAplicacao getQuestao3() {
+        return this.questao3;
     }
 }

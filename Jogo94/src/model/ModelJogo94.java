@@ -78,7 +78,7 @@ public class ModelJogo94 {
         List<ModelResposta> respostas = new ArrayList<ModelResposta>(); // ArrayList que armazena as respostas da questão
         int j = 2;
         while (j < Linha.length) {
-            ModelResposta answer = new ModelResposta(Double.parseDouble(Linha[j]), Linha[j + 1]);
+            ModelResposta answer = new ModelResposta(Integer.parseInt(Linha[j]), Linha[j + 1]);
             respostas.add(answer);
             j += 2;
         }

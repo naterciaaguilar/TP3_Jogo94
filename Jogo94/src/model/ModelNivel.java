@@ -18,8 +18,9 @@ public class ModelNivel {
     private List<ModelQuestao> questoes;
     
     public ModelNivel(ModelJogo94 jogo) {
-        questoes = new ArrayList<ModelQuestao>();
-        numNivel = jogo.getNumeroNiveis();
+        this.questoes = new ArrayList<ModelQuestao>();
+        this.numNivel = jogo.getNumeroNiveis();
+        this.nivelFinalizado = false;
     }
     
     public void criaQuestaoNivel (ModelQuestao novaQuestao) {        

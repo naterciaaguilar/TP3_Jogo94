@@ -11,12 +11,13 @@ package model;
  */
 public class ModelResposta {
     private String palavra;
-    private Double porcentagem;
+    private int porcentagem;
     private boolean respondida;
     
-    public ModelResposta(Double porcentagem, String palavra) {
+    public ModelResposta(int porcentagem, String palavra) {
         this.porcentagem = porcentagem;
         this.palavra = palavra;
+        this.respondida = false;
     }
     
     public String getPalavra() {
@@ -27,11 +28,11 @@ public class ModelResposta {
         this.palavra = palavra;
     }
     
-    public Double getPorcentagem() {
+    public int getPorcentagem() {
         return porcentagem;
     }
     
-    public void setPorcentagem(Double porcentagem) {
+    public void setPorcentagem(int porcentagem) {
         this.porcentagem = porcentagem;
     }
     

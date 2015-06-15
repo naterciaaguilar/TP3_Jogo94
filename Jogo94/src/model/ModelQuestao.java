@@ -30,6 +30,7 @@ public class ModelQuestao {
         this.nivel = nivel;
         this.tipoQuestao = tipoQuestao;
         this.respostas = respostas;
+        this.questaoFinalizada = false;
     }
     
     public String getDescricao() {

@@ -15,6 +15,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.ModelJogo94;
+import model.ModelNivel;
+import model.ModelQuestao;
 
 /**
  * Janela interna principal para selecao do nivel a ser jogado
@@ -156,8 +159,161 @@ public class ViewSelecaoNivel extends JInternalFrame {
         this.nivel25.addActionListener(controlJogo);
     }
     
-    public int getNumNivelSelecionado() {
-        return 0;
+    /**
+     * Ajusta nivel ao voltar da tela de selecao de questao
+     * 
+     * @param nivelAtual
+     */
+    public void ajustarNivel(ModelNivel nivelAtual) {
+        // ajusta estrelas do nivel que acabou de ser jogado
+        // caso o nivel tenha ao menos uma estrela, desbloqueia proximo nivel
+        switch (nivelAtual.getNumNivel()) {
+            case 1:
+                ajustarEstrelasNivel(this.nivel1, nivelAtual);
+                this.nivel2.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 2:
+                ajustarEstrelasNivel(this.nivel2, nivelAtual);
+                this.nivel3.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 3:
+                ajustarEstrelasNivel(this.nivel3, nivelAtual);
+                this.nivel4.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 4:
+                ajustarEstrelasNivel(this.nivel4, nivelAtual);
+                this.nivel5.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 5:
+                ajustarEstrelasNivel(this.nivel5, nivelAtual);
+                this.nivel6.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 6:
+                ajustarEstrelasNivel(this.nivel6, nivelAtual);
+                this.nivel7.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 7:
+                ajustarEstrelasNivel(this.nivel7, nivelAtual);
+                this.nivel8.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 8:
+                ajustarEstrelasNivel(this.nivel8, nivelAtual);
+                this.nivel9.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 9:
+                ajustarEstrelasNivel(this.nivel9, nivelAtual);
+                this.nivel10.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 10:
+                ajustarEstrelasNivel(this.nivel10, nivelAtual);
+                this.nivel11.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 11:
+                ajustarEstrelasNivel(this.nivel11, nivelAtual);
+                this.nivel12.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 12:
+                ajustarEstrelasNivel(this.nivel12, nivelAtual);
+                this.nivel13.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 13:
+                ajustarEstrelasNivel(this.nivel13, nivelAtual);
+                this.nivel14.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 14:
+                ajustarEstrelasNivel(this.nivel14, nivelAtual);
+                this.nivel15.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 15:
+                ajustarEstrelasNivel(this.nivel15, nivelAtual);
+                this.nivel16.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 16:
+                ajustarEstrelasNivel(this.nivel16, nivelAtual);
+                this.nivel17.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 17:
+                ajustarEstrelasNivel(this.nivel17, nivelAtual);
+                this.nivel18.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 18:
+                ajustarEstrelasNivel(this.nivel18, nivelAtual);
+                this.nivel19.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 19:
+                ajustarEstrelasNivel(this.nivel19, nivelAtual);
+                this.nivel20.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 20:
+                ajustarEstrelasNivel(this.nivel20, nivelAtual);
+                this.nivel21.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 21:
+                ajustarEstrelasNivel(this.nivel21, nivelAtual);
+                this.nivel22.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 22:
+                ajustarEstrelasNivel(this.nivel22, nivelAtual);
+                this.nivel23.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 23:
+                ajustarEstrelasNivel(this.nivel23, nivelAtual);
+                this.nivel24.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 24:
+                ajustarEstrelasNivel(this.nivel24, nivelAtual);
+                this.nivel25.setEnabled(nivelAtual.getNivelFinalizado());
+                break;
+            case 25:
+                ajustarEstrelasNivel(this.nivel25, nivelAtual);
+                break;
+        }
+    }
+    
+    /**
+     * Ajusta quantidade e posicionamento de estrelas de botao de nivel especifico
+     * 
+     * @param botao
+     * @param nivel
+     */
+    private void ajustarEstrelasNivel(ButtonAplicacao botao, ModelNivel nivel) {
+        boolean estrelaQuestao[] = new boolean[3];
+        
+        // seta valores das estrelas
+        for (int i = 0; i < 3; i++) {
+            estrelaQuestao[i] = nivel.getQuestoes().get(i).getQuestaoFinalizada();
+        }
+        
+        // identifica icone utilizado dependendo da quantidade de questoes finalizadas
+        if (estrelaQuestao[0]) {
+            if (estrelaQuestao[1]) {
+                if (estrelaQuestao[2]) {
+                    botao.setIcon(ButtonAplicacao.AAA_ICON);
+                } else {
+                    botao.setIcon(ButtonAplicacao.AAB_ICON);
+                }
+            } else {
+                if (estrelaQuestao[2]) {
+                    botao.setIcon(ButtonAplicacao.ABA_ICON);
+                } else {
+                    botao.setIcon(ButtonAplicacao.ABB_ICON);
+                }
+            }
+        } else {
+            if (estrelaQuestao[1]) {
+                if (estrelaQuestao[2]) {
+                    botao.setIcon(ButtonAplicacao.BAA_ICON);
+                } else {
+                    botao.setIcon(ButtonAplicacao.BAB_ICON);
+                }
+            } else {
+                if (estrelaQuestao[2]) {
+                    botao.setIcon(ButtonAplicacao.BBA_ICON);
+                } else {
+                    botao.setIcon(ButtonAplicacao.BBB_ICON);
+                }
+            }
+        }
     }
     
     public ButtonAplicacao getNivel1() {

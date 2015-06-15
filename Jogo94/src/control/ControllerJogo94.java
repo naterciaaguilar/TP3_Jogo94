@@ -22,8 +22,8 @@ public class ControllerJogo94 implements ActionListener {
     
     public void inicializarJogo() {
         // cria fases e janelas do jogo
-        jogoAtual = new ModelJogo94();
-        viewJogoAtual = new VisaoJogo94(this);
+        this.jogoAtual = new ModelJogo94();
+        this.viewJogoAtual = new VisaoJogo94(this);
     }
     
     /**
@@ -33,18 +33,55 @@ public class ControllerJogo94 implements ActionListener {
      * @param numNivel
      */
     public void selecionarNivel(int numNivel) {
+        // troca tela visível
         this.viewJogoAtual.getTelaSelecaoNivel().setVisible(false);
         this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(true);
         
-        this.viewJogoAtual.getTelaSelecaoQuestao().configurarNivel(jogoAtual.getNivel(numNivel - 1));
+        // configura nivel atual
+        this.viewJogoAtual.getTelaSelecaoQuestao().configurarNivel(this.jogoAtual.getNivel(numNivel - 1));
     }
     
-    public void selecionarQuestao() {
+    /**
+     * Seleciona uma questao quando o usuario clicar no botao e abre tela de resposta
+     * para esta questao
+     * 
+     * @param numNivel
+     * @param numQuestao
+     */
+    public void selecionarQuestao(int numNivel, int numQuestao) {
+        // troca tela visível
+        this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(false);
+        this.viewJogoAtual.getTelaRespostaQuestao().setVisible(true);
         
+        // configura questao selecionada
+        this.viewJogoAtual.getTelaRespostaQuestao().configurarQuestao(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1));
     }
     
     public void responderQuestao() {
         
+    }
+    
+    /**
+     * Volta para a tela de selecao de nivel, estando na tela de selecao de questao
+     * 
+     * @param numNivel
+     */
+    public void voltarTelaSelecaoNivel(int numNivel) {
+        // troca tela visível
+        this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(false);
+        this.viewJogoAtual.getTelaSelecaoNivel().setVisible(true);
+        
+        // ajusta mudancas na tela de selecao de nivel
+        this.viewJogoAtual.getTelaSelecaoNivel().ajustarNivel(this.jogoAtual.getNivel(numNivel - 1));
+    }
+    
+    public void voltarTelaSelecaoQuestao(int numNivel, int numQuestao) {
+        // troca tela visível
+        this.viewJogoAtual.getTelaRespostaQuestao().setVisible(false);
+        this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(true);
+        
+        // ajusta mudancas na tela de selecao de nivel
+        this.viewJogoAtual.getTelaSelecaoQuestao().ajustarQuestao(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1));
     }
     
     @Override
@@ -81,7 +118,20 @@ public class ControllerJogo94 implements ActionListener {
         }
         
         // tratamento dos eventos da tela de Selecao de Questao
+        if (obj == this.viewJogoAtual.getTelaSelecaoQuestao().getVoltar()) {
+            this.voltarTelaSelecaoNivel(this.viewJogoAtual.getTelaSelecaoQuestao().getNumNivel());
+        } else if (obj == this.viewJogoAtual.getTelaSelecaoQuestao().getQuestao1()) {
+            this.selecionarQuestao(this.viewJogoAtual.getTelaSelecaoQuestao().getNumNivel(), 1);
+        } else if (obj == this.viewJogoAtual.getTelaSelecaoQuestao().getQuestao2()) {
+            this.selecionarQuestao(this.viewJogoAtual.getTelaSelecaoQuestao().getNumNivel(), 2);
+        } else if (obj == this.viewJogoAtual.getTelaSelecaoQuestao().getQuestao3()) {
+            this.selecionarQuestao(this.viewJogoAtual.getTelaSelecaoQuestao().getNumNivel(), 3);
+        }
         
         // tratamento dos eventos da tela de Selecao de Resposta
+        if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getVoltar()) {
+            this.voltarTelaSelecaoQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                          this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao());
+        }
     }
 }

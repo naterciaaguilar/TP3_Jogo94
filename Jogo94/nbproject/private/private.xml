@@ -4,10 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/model/TipoQuestao.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/control/ControllerJogo94.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/ViewSelecaoNivel.java</file>
             <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/model/ModelJogo94.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/control/Main.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/FrameAplicacao.java</file>
             <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/model/ModelQuestao.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/VisaoJogo94.java</file>
             <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/model/ModelResposta.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/ViewSelecaoQuestao.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/ButtonAplicacao.java</file>
             <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/model/ModelNivel.java</file>
+            <file>file:/C:/Users/User/Documents/UFMG/5º%20Semestre/Programação%20Modular/TP3/Github/TP3_Jogo94/Jogo94/src/view/ViewQuestao.java</file>
         </group>
     </open-files>
 </project-private>
