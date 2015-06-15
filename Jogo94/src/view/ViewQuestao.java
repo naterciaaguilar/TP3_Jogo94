@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import model.ModelQuestao;
@@ -149,6 +150,16 @@ public class ViewQuestao extends JInternalFrame {
         
         // eventos da tela
         this.voltar.addActionListener(controlJogo);
+
+        this.resp1.addActionListener(controlJogo);
+        this.resp2.addActionListener(controlJogo);
+        this.resp3.addActionListener(controlJogo);
+        this.resp4.addActionListener(controlJogo);
+        this.resp5.addActionListener(controlJogo);
+        this.resp6.addActionListener(controlJogo);
+        this.resp7.addActionListener(controlJogo);
+        this.resp8.addActionListener(controlJogo);
+        this.resp9.addActionListener(controlJogo);
         
         // numeros de nivel e questao
         this.numNivelAtual = 0;
@@ -302,6 +313,13 @@ public class ViewQuestao extends JInternalFrame {
         }
     }
     
+    public void mostrarDica(ModelResposta resposta) {
+        JOptionPane.showMessageDialog(null, 
+                                      "A palavra contem " + String.valueOf(resposta.getPalavra().length()) + " letras e comeca com a letra " + resposta.getPalavra().substring(0, 1).toUpperCase() + ".",
+                                      "Dica", 
+                                      JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     public int getNumNivel() {
         return this.numNivelAtual;
     }
@@ -312,5 +330,41 @@ public class ViewQuestao extends JInternalFrame {
     
     public JButton getVoltar() {
         return this.voltar;
+    }
+    
+    public JButton getResp1() {
+        return this.resp1;
+    }
+    
+    public JButton getResp2() {
+        return this.resp2;
+    }
+    
+    public JButton getResp3() {
+        return this.resp3;
+    }
+    
+    public JButton getResp4() {
+        return this.resp4;
+    }
+    
+    public JButton getResp5() {
+        return this.resp5;
+    }
+    
+    public JButton getResp6() {
+        return this.resp6;
+    }
+    
+    public JButton getResp7() {
+        return this.resp7;
+    }
+    
+    public JButton getResp8() {
+        return this.resp8;
+    }
+    
+    public JButton getResp9() {
+        return this.resp9;
     }
 }

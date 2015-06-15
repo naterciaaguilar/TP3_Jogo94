@@ -75,6 +75,12 @@ public class ControllerJogo94 implements ActionListener {
         this.viewJogoAtual.getTelaSelecaoNivel().ajustarNivel(this.jogoAtual.getNivel(numNivel - 1));
     }
     
+    /**
+     * Volta para a tela de selecao de questao, estando na tela de resposta de questao
+     * 
+     * @param numNivel
+     * @param numQuestao
+     */
     public void voltarTelaSelecaoQuestao(int numNivel, int numQuestao) {
         // troca tela visível
         this.viewJogoAtual.getTelaRespostaQuestao().setVisible(false);
@@ -82,6 +88,17 @@ public class ControllerJogo94 implements ActionListener {
         
         // ajusta mudancas na tela de selecao de nivel
         this.viewJogoAtual.getTelaSelecaoQuestao().ajustarQuestao(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1));
+    }
+    
+    /**
+     * Mostrar ao jogador uma dica para a resposta
+     * 
+     * @param numNivel
+     * @param numQuestao
+     * @param numResposta
+     */
+    public void fornecerDicaResposta(int numNivel, int numQuestao, int numResposta) {
+        this.viewJogoAtual.getTelaRespostaQuestao().mostrarDica(this.jogoAtual.getNivel(numNivel - 1).getQuestao(numQuestao - 1).getResposta(numResposta - 1));
     }
     
     @Override
@@ -132,6 +149,33 @@ public class ControllerJogo94 implements ActionListener {
         if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getVoltar()) {
             this.voltarTelaSelecaoQuestao(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
                                           this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao());
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp1()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 1);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp2()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 2);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp3()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 3);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp4()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 4);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp5()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 5);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp6()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 6);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp7()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 7);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp8()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 8);
+        } else if (obj == this.viewJogoAtual.getTelaRespostaQuestao().getResp9()) {
+            this.fornecerDicaResposta(this.viewJogoAtual.getTelaRespostaQuestao().getNumNivel(),
+                                      this.viewJogoAtual.getTelaRespostaQuestao().getNumQuestao(), 9);
         }
     }
 }

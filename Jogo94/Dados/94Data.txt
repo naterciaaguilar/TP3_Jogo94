@@ -1,5 +1,5 @@
 1;Animais que nascem de um ovo;64;Passaro;11;Tartaruga;9;Jacare;7;Cobra;3;Peixe
-1;Frutas com semestes ou caroco;29;Maca;16;Melancia;15;Uva;14;Abacate;10;Manga;10;Pessego
+1;Frutas com sementes ou caroco;29;Maca;16;Melancia;15;Uva;14;Abacate;10;Manga;10;Pessego
 1;img_fogo_bombeiro.jpg;48;Fogo;26;Bombeiro;9;agua;7;Mangueira;4;Socorro
 2;Primeira coisa que eu faco de manha;42;Tomar cafe;29;Escovar os dentes;9;Banho;6;Banheiro;5;Telefone;3;Vestir
 2;Precisa de um bilhete;33;Cinema;16;Teatro;14;Trem;13;Show;13;onibus;5;Aviao
@@ -19,7 +19,7 @@
 7;Partes de um cavalo;30;Perna;21;Crina;20;Cabeca;20;Rabo;2;Barriga;1;Bunda
 7;GPS;33;Localizacao;23;Caminho;17;Mapa;15;Carro;5;Satelite;1;Perdido
 7;img_kombi.jpg;41;Praia;23;Ferias;15;Verao;12;Kombi;3;Coqueiro
-8;e doce;25;Chocolate;19;Brigadeiro;14;Bala;12;Acúcar;12;Bolo;7;Sorvete;5;Chiclete
+8;E doce;25;Chocolate;19;Brigadeiro;14;Bala;12;Acúcar;12;Bolo;7;Sorvete;5;Chiclete
 8;Barack Obama;35;Presidente;30;Estados Unidos;21;Negro;4;Poder;2;Casa Branca;1;Democrata;1;Politica
 8;img_homem_trabalho.jpg;33;Trabalho;27;Estresse;21;Raiva;9;Desespero;4;Problema
 9;Partes de um carro;28;Volante;17;Motor;15;Roda;10;Pneu;7;Porta;6;Farol;6;Banco;5;Freio
@@ -41,9 +41,9 @@
 14;Modos de Pagamento;41;Cartao;28;Dinheiro;22;Cheque;3;Boleto
 14;img_almoco.jpg;42;Amigos;20;Almoco;15;Comida;12;Felicidade;5;Suco
 15;Poker;32;Cartas;18;Jogo;17;Dinheiro;13;Fichas;9;Aposta;3;Mesa;1;Cassino;1;Blefe
-15;e proibido no aviao;37;Fumar;33;Celular;8;Arma;7;Sexo;6;Bomba;3;Faca
+15;E proibido no aviao;37;Fumar;33;Celular;8;Arma;7;Sexo;6;Bomba;3;Faca
 15;img_praia.jpg;33;Viagem;29;Praia;13;Ferias;11;Malas;4;Destino;3;Verao;1;Azul
-16;e útil para os idosos;42;Bengala;15;oculos;12;Remedios;10;Dentadura;8;Ajuda;7;Cadeira de Rodas
+16;E util para os idosos;42;Bengala;15;oculos;12;Remedios;10;Dentadura;8;Ajuda;7;Cadeira de Rodas
 16;Um trabalho perigoso;39;Policial;20;Bombeiro;11;Eletricista;10;Piloto;6;Exercito;5;Pedreiro;3;Motoboy
 16;img_batatafrita.jpg;41;Batata;20;Fritura;14;Gordura;10;Gostoso;6;Sal;3;Amarelo
 17;Coisas relacionadas aos Estados Unidos;32;Fast Food;19;Disney;13;Compras;12;Obama;9;Dolar;9;Estatua da Liberdade
@@ -67,7 +67,7 @@
 23;Coisas que temos a tendencia a perder;34;Dinheiro;18;Chave;15;Celular;7;Peso;5;Tempo;4;Paciencia;4;Cabelo;4;Carteira;3;Brincos
 23;Gato;27;Pelo;22;Fofo;15;Animal;13;Bonito;11;Miado;6;Leite
 23;img_agua_viva.jpg;42;Mar;28;agua viva;11;Queimadura;9;Choque;3;Gosma;1;Tentaculos
-24;e bom para voce, mas voce nao gosta;36;Legumes;20;Remedio;15;Estudar;15;Exercicio;6;Frutas;2;Peixe
+24;E bom para voce, mas voce nao gosta;36;Legumes;20;Remedio;15;Estudar;15;Exercicio;6;Frutas;2;Peixe
 24;Uma qualidade;24;Honesto;18;Bonito;17;Legal;15;Gentil;12;Inteligente;4;Paciente;4;Humilde
 24;img_spa.jpg;47;Relaxar;25;Massagem;11;Spa;7;oleo;2;Toalha;2;Beleza
 25;Comida tipica brasileira;44;Feijao;12;Churrasco;11;Tapioca;10;Arroz;9;Acaraje;5;Farofa;2;Vatapa;1;Pao de Queijo

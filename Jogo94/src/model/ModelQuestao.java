@@ -80,4 +80,8 @@ public class ModelQuestao {
     public void setRespostas(List<ModelResposta> respostas) {
         this.respostas = respostas;
     }
+    
+    public ModelResposta getResposta(int numReposta) {
+        return respostas.get(numReposta);
+    }
 }
