@@ -31,6 +31,21 @@ public class ControllerJogo94 implements ActionListener {
     }
     
     /**
+     * Retorno do nome da tela visível no momento
+     */
+    protected String getNomeTelaVisivel(){
+        String retorno = new String();
+        if (this.viewJogoAtual.getTelaSelecaoNivel().isVisible()) {
+            retorno = "SeleçãoNível";
+        } else if (this.viewJogoAtual.getTelaSelecaoQuestao().isVisible()) {
+            retorno = "SeleçãoQuestão";
+        } else if (this.viewJogoAtual.getTelaRespostaQuestao().isVisible()) {
+            retorno = "RespostaQuestão";            
+        }
+        return retorno;
+    }
+    
+    /**
      * Seleciona um nivel quando o usuario clicar no botao e abre tela de selecao de questao
      * para este nivel
      * 
@@ -54,6 +69,7 @@ public class ControllerJogo94 implements ActionListener {
      */
     public void selecionarQuestao(int numNivel, int numQuestao) {
         // troca tela visível
+        this.viewJogoAtual.getTelaSelecaoNivel().setVisible(false);
         this.viewJogoAtual.getTelaSelecaoQuestao().setVisible(false);
         this.viewJogoAtual.getTelaRespostaQuestao().setVisible(true);
         
