@@ -8,7 +8,7 @@
 3;Isso pesa mais de uma tonelada;37;Elefante;22;Carro;11;Baleia;8;Hipopotamo;7;Navio;5;Aviao;4;Predio
 3;img_elefante.jpg;37;Elefante;24;Familia;8;Filhotes;8;Africa;8;Selva;7;Agua;2;Lama
 4;Instrumento de percussao;35;Bateria;27;Tambor;16;Pandeiro;8;Bumbo;3;Bongo;3;Triangulo;2;Agogo
-4;StarWars;22;Guerra;15;Sabre de luz;15;Estrelas;14;Darth Vader;11;Espaco;7;Naves;5;r2-d2;3;Luke;1;Yoda
+4;StarWars;22;Guerra;15;Sabre de luz;15;Estrelas;14;Darth Vader;11;Espaco;7;Naves;5;r2-d2;3;Luke;2;Yoda
 4;img_dado.jpg;27;Dado;25;Jogo;22;Numeros;10;Sorte;7;Quadrado;3;Azar
 5;Especies de repteis;31;Lagarto;22;Jacare;21;Cobra;7;Tartaruga;5;Iguana;5;Sapo;3;Camaleao
 5;Eu uso todos os dias;44;Roupa;11;Escova;10;Escova de dentes;10;Celular;9;Sapato;5;Sabonete;2;Banheiro;2;Cama;1;Computador
@@ -59,9 +59,9 @@
 20;Animais marinhos;43;Peixe;20;Baleia;12;Golfinho;11;Tartaruga;6;Foca;2;Lula
 20;img_pizza.jpg;56;Pizza;13;Queijo;11;Delicia;7;Azeitona;5;Calabresa;2;Fatia
 21;Encontramos em um castelo;59;Nobres;10;Coroa;8;Torre;5;Trono;5;Dragao;4;Armadura;3;Escadas
-21;Equipamento do Indiana Jones;40;Chicote;36;Chapeu;10;Arma;6;Faca;4;Bota;2;Lanterna;1;Bolsa
+21;Equipamento do Indiana Jones;40;Chicote;31;Chapeu;10;Arma;6;Faca;4;Bota;2;Lanterna;1;Bolsa
 21;img_carro_corrida.jpg;29;Carro;24;Corrida;14;Piloto;14;Velocidade;9;Formula 1;4;Pista
-22;Coisas relacionadas ao Egito;40;Piramide;17;Deserto;14;Farao;9;Múmia;7;Cleopatra;7;Esfinge
+22;Coisas relacionadas ao Egito;40;Piramide;17;Deserto;14;Farao;9;MÃºmia;7;Cleopatra;7;Esfinge
 22;Acessorios de um policial;42;Arma;22;Algema;14;Cacetete;8;Colete;4;Distintivo;4;Quepe
 22;img_matematica.jpg;34;Matematica;29;Calculo;20;Escola;8;Quadro;3;Giz
 23;Coisas que temos a tendencia a perder;34;Dinheiro;18;Chave;15;Celular;7;Peso;5;Tempo;4;Paciencia;4;Cabelo;4;Carteira;3;Brincos
