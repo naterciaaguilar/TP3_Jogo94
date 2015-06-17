@@ -105,7 +105,7 @@ public class ModelJogo94Test {
     
     /** 
      * Testa se todas as questões do jogo possuem respostas cujos
-     * percentuais somam de 94 a 100.
+     * percentuais somam exatamente 94.
     */
     @Test
     public void testarSomaPercentuais94() {
@@ -118,7 +118,7 @@ public class ModelJogo94Test {
                     somaPct += resposta.getPorcentagem();
                 }
                 System.out.println("Nível: " + nivel.getNumNivel() + ", Questão: " + questao.getDescricao());
-                assertTrue(somaPct >= 94 && somaPct <= 100);
+                assertTrue(somaPct == 94);
             }
         }
     }
